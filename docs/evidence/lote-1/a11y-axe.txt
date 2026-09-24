@@ -1,0 +1,34 @@
+A11Y (axe) - LOTE 1
+===================
+Escopo: este lote NAO tem interface navegavel. O showcase (showcase/App.tsx) e apenas um <h1>.
+Nao ha capturas de tela nem navegacao por teclado para testar; nenhuma captura foi fabricada.
+Todas as verificacoes abaixo sao vitest-axe (axe-core) sobre DOM jsdom.
+LIMITACAO: jsdom nao calcula cores renderizadas, entao a regra de contraste do axe nao roda aqui.
+O contraste e coberto pelo teste de tokens e por contraste.txt (calculo WCAG direto sobre os hex).
+
+Contagem de violacoes medida (esperado 0), fonte: qa-adversarial-saida.txt e resultado-testes.txt
+
+Item                                             Violacoes  Prova
+Icon sem title (1 icone, teste do repo)                  0  resultado-testes.txt: 'Icon > nao tem violacoes de acessibilidade' PASSOU
+Icon sem title (loop 83 icones)                          0  linha 'QA| icones' abaixo
+Icon com title (loop 83 icones)                          0  linha 'QA| icones' abaixo
+Logo on-light                               0  linha 'QA| Logo on-light' abaixo
+Logo on-dark                                0  linha 'QA| Logo on-dark' abaixo
+Logo on-red                                 0  linha 'QA| Logo on-red' abaixo
+Logo size=40 (teste do repo)                             0  resultado-testes.txt: 'Logo > aplica o tamanho... acessibilidade' PASSOU
+GoogleIcon                                               0  linha 'QA| GoogleIcon axe'
+AppleIcon                                                0  linha 'QA| AppleIcon axe'
+
+Saida bruta dos testes (linhas QA| relacionadas a axe):
+QA| icones => {"total":83,"badVb":0,"empty":0,"violacoesSemTitle":0,"violacoesComTitle":0,"msTotal":4817,"msSoAxeSemTitle":2420}
+QA| Logo on-light => {"imgsComNome":1,"elementosComAriaLabel":1,"filhosAriaHidden":3,"hyphenClass":"text-primary","rootClass":"inline-flex items-baseline font-bold leading-none tracking-[-0.045em] text-ink","axe":0}
+QA| Logo on-dark => {"imgsComNome":1,"elementosComAriaLabel":1,"filhosAriaHidden":3,"hyphenClass":"text-primary","rootClass":"inline-flex items-baseline font-bold leading-none tracking-[-0.045em] text-white","axe":0}
+QA| Logo on-red => {"imgsComNome":1,"elementosComAriaLabel":1,"filhosAriaHidden":3,"hyphenClass":"text-on-primary","rootClass":"inline-flex items-baseline font-bold leading-none tracking-[-0.045em] text-on-primary","axe":0}
+QA| GoogleIcon axe => 0
+QA| AppleIcon axe => 0
+
+Resultado dos testes de acessibilidade do repo (verbose):
+ ✓ src/components/Logo/Logo.test.tsx > Logo > tem nome acessível único, sem ler as partes do wordmark 347ms
+ ✓ src/components/Logo/Logo.test.tsx > Logo > aplica o tamanho em px e não tem violações de acessibilidade
+ ✓ src/icons/Icon.test.tsx > Icon > com title vira imagem acessível
+ ✓ src/icons/Icon.test.tsx > Icon > não tem violações de acessibilidade

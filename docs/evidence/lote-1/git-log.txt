@@ -1,0 +1,52 @@
+$ git log --oneline 2b2048d..HEAD
+5fcaa31 feat(icons): Icon gerado dos SVGs da marca, ícones sociais e Logo
+ca6354d feat(tokens): tokens únicos, CSS vars, preset Tailwind e teste de contraste
+fdb7f21 chore: fixar eslint 9 e formatar com prettier
+0d3ca02 chore: scaffold do UI Kit (Vite, React 18, Tailwind 3.4, Vitest)
+
+$ git diff --stat 2b2048d..HEAD | tail -1
+ 41 files changed, 5485 insertions(+)
+
+$ git diff --stat 2b2048d..HEAD (completo)
+ .gitignore                        |    6 +
+ .node-version                     |    1 +
+ .prettierignore                   |   11 +
+ .prettierrc.json                  |    6 +
+ eslint.config.js                  |   22 +
+ index.html                        |   12 +
+ package.json                      |   56 +
+ pnpm-lock.yaml                    | 4560 +++++++++++++++++++++++++++++++++++++
+ postcss.config.js                 |    1 +
+ scripts/build-icons.mjs           |   11 +
+ scripts/build-tokens-css.mjs      |    8 +
+ scripts/icons-module.mjs          |   16 +
+ scripts/icons-module.test.ts      |   23 +
+ scripts/tokens-css.mjs            |   18 +
+ scripts/tokens-css.test.ts        |   22 +
+ showcase/App.tsx                  |    3 +
+ showcase/index.css                |   11 +
+ showcase/main.tsx                 |   14 +
+ src/components/Logo/Logo.test.tsx |   26 +
+ src/components/Logo/Logo.tsx      |   43 +
+ src/components/Logo/index.ts      |    1 +
+ src/icons/Icon.test.tsx           |   34 +
+ src/icons/Icon.tsx                |   34 +
+ src/icons/SocialIcon.tsx          |   50 +
+ src/icons/icons.generated.ts      |   88 +
+ src/icons/index.ts                |    3 +
+ src/index.ts                      |    3 +
+ src/lib/cn.test.ts                |   17 +
+ src/lib/cn.ts                     |   28 +
+ src/test/render.tsx               |    9 +
+ src/test/setup.ts                 |   19 +
+ src/test/vitest-axe.d.ts          |   10 +
+ src/tokens/contrast.test.ts       |   55 +
+ src/tokens/contrast.ts            |   17 +
+ src/tokens/preset.test.ts         |   24 +
+ src/tokens/preset.ts              |   36 +
+ src/tokens/tokens.css             |   60 +
+ src/tokens/tokens.json            |   79 +
+ tailwind.config.ts                |    7 +
+ tsconfig.json                     |   22 +
+ vite.config.ts                    |   19 +
+ 41 files changed, 5485 insertions(+)

@@ -1,0 +1,84 @@
+Pares lidos de contrast.test.ts: 24
+
+### Pares do teste src/tokens/contrast.test.ts
+
+| Tema | Par (fg / bg) | fg | bg | Razão | Mínimo | Resultado |
+|---|---|---|---|---|---|---|
+| light | ink / bg | #1f1f1f | #f5f5f5 | 15.12 | 4.5 | PASSA |
+| light | ink / surface | #1f1f1f | #ffffff | 16.48 | 4.5 | PASSA |
+| light | ink / surface-2 | #1f1f1f | #efefef | 14.33 | 4.5 | PASSA |
+| light | muted / bg | #5c5c5c | #f5f5f5 | 6.13 | 4.5 | PASSA |
+| light | muted / surface | #5c5c5c | #ffffff | 6.69 | 4.5 | PASSA |
+| light | muted / surface-2 | #5c5c5c | #efefef | 5.82 | 4.5 | PASSA |
+| light | faint / bg | #666666 | #f5f5f5 | 5.27 | 4.5 | PASSA |
+| light | faint / surface | #666666 | #ffffff | 5.74 | 4.5 | PASSA |
+| light | faint / surface-2 | #666666 | #efefef | 4.99 | 4.5 | PASSA |
+| light | on-primary / primary | #ffffff | #b1111b | 7.08 | 4.5 | PASSA |
+| light | on-primary / primary-hover | #ffffff | #960f17 | 8.83 | 4.5 | PASSA |
+| light | accent-text / surface | #b1111b | #ffffff | 7.08 | 4.5 | PASSA |
+| light | accent-text / bg | #b1111b | #f5f5f5 | 6.50 | 4.5 | PASSA |
+| light | accent-text / primary-soft | #b1111b | #fbe8e9 | 6.01 | 4.5 | PASSA |
+| light | success-text / success-bg | #137a3d | #e3f5ea | 4.77 | 4.5 | PASSA |
+| light | warning-text / warning-bg | #855800 | #fdf0cc | 5.46 | 4.5 | PASSA |
+| light | danger-text / danger-bg | #b42318 | #fdecea | 5.75 | 4.5 | PASSA |
+| light | info-text / info-bg | #175cd3 | #eff4ff | 5.43 | 4.5 | PASSA |
+| light | success-text / surface | #137a3d | #ffffff | 5.41 | 4.5 | PASSA |
+| light | danger-text / surface | #b42318 | #ffffff | 6.57 | 4.5 | PASSA |
+| light | info-text / surface | #175cd3 | #ffffff | 5.99 | 4.5 | PASSA |
+| light | primary / surface | #b1111b | #ffffff | 7.08 | 3 | PASSA |
+| light | success / surface | #22a45d | #ffffff | 3.21 | 3 | PASSA |
+| light | danger / surface | #d92d20 | #ffffff | 4.83 | 3 | PASSA |
+| dark | ink / bg | #f5f5f5 | #141414 | 16.90 | 4.5 | PASSA |
+| dark | ink / surface | #f5f5f5 | #1f1f1f | 15.12 | 4.5 | PASSA |
+| dark | ink / surface-2 | #f5f5f5 | #2a2a2a | 13.17 | 4.5 | PASSA |
+| dark | muted / bg | #b0b0b0 | #141414 | 8.49 | 4.5 | PASSA |
+| dark | muted / surface | #b0b0b0 | #1f1f1f | 7.60 | 4.5 | PASSA |
+| dark | muted / surface-2 | #b0b0b0 | #2a2a2a | 6.62 | 4.5 | PASSA |
+| dark | faint / bg | #999999 | #141414 | 6.47 | 4.5 | PASSA |
+| dark | faint / surface | #999999 | #1f1f1f | 5.79 | 4.5 | PASSA |
+| dark | faint / surface-2 | #999999 | #2a2a2a | 5.04 | 4.5 | PASSA |
+| dark | on-primary / primary | #ffffff | #d0202b | 5.35 | 4.5 | PASSA |
+| dark | on-primary / primary-hover | #ffffff | #d8323c | 4.73 | 4.5 | PASSA |
+| dark | accent-text / surface | #ff6f78 | #1f1f1f | 6.12 | 4.5 | PASSA |
+| dark | accent-text / bg | #ff6f78 | #141414 | 6.84 | 4.5 | PASSA |
+| dark | accent-text / primary-soft | #ff6f78 | #451b1e | 5.46 | 4.5 | PASSA |
+| dark | success-text / success-bg | #52d88a | #1f3429 | 7.30 | 4.5 | PASSA |
+| dark | warning-text / warning-bg | #f1b93a | #3e341a | 6.86 | 4.5 | PASSA |
+| dark | danger-text / danger-bg | #ff8a80 | #3a1a18 | 6.86 | 4.5 | PASSA |
+| dark | info-text / info-bg | #84adff | #16233d | 7.01 | 4.5 | PASSA |
+| dark | success-text / surface | #52d88a | #1f1f1f | 9.06 | 4.5 | PASSA |
+| dark | danger-text / surface | #ff8a80 | #1f1f1f | 7.22 | 4.5 | PASSA |
+| dark | info-text / surface | #84adff | #1f1f1f | 7.38 | 4.5 | PASSA |
+| dark | primary / surface | #d0202b | #1f1f1f | 3.08 | 3 | PASSA |
+| dark | success / surface | #52d88a | #1f1f1f | 9.06 | 3 | PASSA |
+| dark | danger / surface | #f97066 | #1f1f1f | 5.92 | 3 | PASSA |
+
+### Pares extras (próximos lotes)
+
+| Tema | Par (fg / bg) | fg | bg | Razão | Mínimo | Resultado |
+|---|---|---|---|---|---|---|
+| light | muted / surface | #5c5c5c | #ffffff | 6.69 | 4.5 | PASSA |
+| light | on-primary / primary-press | #ffffff | #7b0c13 | 11.03 | 4.5 | PASSA |
+| light | ink / primary-soft | #1f1f1f | #fbe8e9 | 13.99 | 4.5 | PASSA |
+| light | warning / surface | #e2a400 | #ffffff | 2.20 | 3 | FALHA (ACHADO) |
+| light | line-strong / surface | #cfcfcf | #ffffff | 1.56 | - | informativo |
+| dark | muted / surface | #b0b0b0 | #1f1f1f | 7.60 | 4.5 | PASSA |
+| dark | on-primary / primary-press | #ffffff | #b1111b | 7.08 | 4.5 | PASSA |
+| dark | ink / primary-soft | #f5f5f5 | #451b1e | 13.48 | 4.5 | PASSA |
+| dark | warning / surface | #f1b93a | #1f1f1f | 9.22 | 3 | PASSA |
+| dark | line-strong / surface | #4a4a4a | #1f1f1f | 1.86 | - | informativo |
+
+### Texto branco sobre painel escuro
+
+| Par | fg | bg | Razão | Mínimo | Resultado |
+|---|---|---|---|---|---|
+| branco / neutral-900 | #ffffff | #171717 | 17.93 | 4.5 | PASSA |
+
+### Dark primary: antes x depois (item de pendência)
+
+| Par | fg | bg | Razão | Mínimo | Resultado |
+|---|---|---|---|---|---|
+| dark primary antes (#b1111b) / surface #1f1f1f | #b1111b | #1f1f1f | 2.33 | 3 | FALHA |
+| dark primary depois (#d0202b, tokens.json) / surface #1f1f1f | #d0202b | #1f1f1f | 3.08 | 3 | PASSA |
+
+Total de verificações com mínimo: 57; falhas: 1

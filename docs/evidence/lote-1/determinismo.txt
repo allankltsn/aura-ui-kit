@@ -1,0 +1,41 @@
+$ sha256sum (antes)
+2bb5932ee407d8c732ca410649d49e04993921bdca5cc9ac4cbe05b64eced8d4 *src/icons/icons.generated.ts
+af99c8f6be0b22e19fdedea0fd7e9f4b3d7f142b62489ed8dc672cb07bac95e8 *src/tokens/tokens.css
+$ pnpm icons
+
+> @allankltsn/ui@0.0.0 icons E:\allan\aura-ui-kit
+> node scripts/build-icons.mjs
+
+83 ícones gerados
+exit code: 0
+$ pnpm tokens
+
+> @allankltsn/ui@0.0.0 tokens E:\allan\aura-ui-kit
+> node scripts/build-tokens-css.mjs
+
+tokens.css atualizado
+exit code: 0
+$ sha256sum (execucao 1)
+2bb5932ee407d8c732ca410649d49e04993921bdca5cc9ac4cbe05b64eced8d4 *src/icons/icons.generated.ts
+af99c8f6be0b22e19fdedea0fd7e9f4b3d7f142b62489ed8dc672cb07bac95e8 *src/tokens/tokens.css
+$ git status --short -- src scripts
+?? src/__qa__/
+$ git diff --stat -- src scripts
+$ pnpm icons && pnpm tokens (execucao 2)
+
+> @allankltsn/ui@0.0.0 icons E:\allan\aura-ui-kit
+> node scripts/build-icons.mjs
+
+83 ícones gerados
+
+> @allankltsn/ui@0.0.0 tokens E:\allan\aura-ui-kit
+> node scripts/build-tokens-css.mjs
+
+tokens.css atualizado
+$ sha256sum (execucao 2)
+2bb5932ee407d8c732ca410649d49e04993921bdca5cc9ac4cbe05b64eced8d4 *src/icons/icons.generated.ts
+af99c8f6be0b22e19fdedea0fd7e9f4b3d7f142b62489ed8dc672cb07bac95e8 *src/tokens/tokens.css
+$ git diff --stat -- src scripts (execucao 2)
+warning: in the working copy of 'src/icons/icons.generated.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/tokens/tokens.css', LF will be replaced by CRLF the next time Git touches it
+(fim)

@@ -1,0 +1,4 @@
+$ git clone -c core.autocrlf=true . <tmp>  (simula checkout no Windows do usuario)
+i/lf    w/crlf  attr/                 	src/icons/icons.generated.ts
+i/lf    w/crlf  attr/                 	src/tokens/tokens.css
+tokens.css do clone === gerado ? false | CRLF no arquivo: true | tokens.json tem CRLF: true
