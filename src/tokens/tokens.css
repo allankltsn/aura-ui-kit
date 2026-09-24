@@ -22,6 +22,7 @@
   --color-warning-bg: 253 240 204;
   --color-warning-text: 133 88 0;
   --color-danger: 217 45 32;
+  --color-on-danger: 255 255 255;
   --color-danger-bg: 253 236 234;
   --color-danger-text: 180 35 24;
   --color-info: 23 92 211;
@@ -52,6 +53,7 @@
   --color-warning-bg: 62 52 26;
   --color-warning-text: 241 185 58;
   --color-danger: 249 112 102;
+  --color-on-danger: 31 31 31;
   --color-danger-bg: 58 26 24;
   --color-danger-text: 255 138 128;
   --color-info: 132 173 255;

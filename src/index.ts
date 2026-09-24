@@ -1,3 +1,8 @@
 export { cn } from './lib/cn';
 export * from './icons';
 export * from './components/Logo';
+export * from './components/Spinner';
+export * from './components/Button';
+export * from './components/Badge';
+export * from './components/Alert';
+export * from './components/Card';
