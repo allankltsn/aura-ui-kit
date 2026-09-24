@@ -29,6 +29,9 @@ const PAIRS: Array<[string, string, number]> = [
   ['primary', 'surface', 3],
   ['success', 'surface', 3],
   ['danger', 'surface', 3],
+  ['warning', 'surface', 3],
+  ['on-primary', 'primary-press', 4.5],
+  ['ink', 'primary-soft', 4.5],
 ];
 
 describe('contraste dos tokens (WCAG AA)', () => {

@@ -12,6 +12,7 @@ export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'children' | 'n
 export function Icon({ name, size = 20, title, className, ...rest }: IconProps) {
   return (
     <svg
+      {...rest}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       width={size}
@@ -28,7 +29,6 @@ export function Icon({ name, size = 20, title, className, ...rest }: IconProps) 
       className={cn('shrink-0', className)}
       // O conteúdo vem de assets/aurafit-icons/svg, gerado em build (confiável, sem entrada do usuário).
       dangerouslySetInnerHTML={{ __html: iconPaths[name] }}
-      {...rest}
     />
   );
 }

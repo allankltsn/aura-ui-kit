@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import tokens from '../src/tokens/tokens.json';
 // @ts-expect-error módulo .mjs sem tipos
 import { renderTokensCss } from './tokens-css.mjs';
@@ -16,7 +17,8 @@ describe('renderTokensCss', () => {
   });
 
   it('src/tokens/tokens.css está em dia com tokens.json', () => {
-    const onDisk = readFileSync(resolve(process.cwd(), 'src/tokens/tokens.css'), 'utf8');
+    const file = resolve(dirname(fileURLToPath(import.meta.url)), '../src/tokens/tokens.css');
+    const onDisk = readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
     expect(onDisk).toBe(css);
   });
 });
