@@ -9,7 +9,11 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/test/setup.ts'],
-    include: ['src/**/*.test.{ts,tsx}', 'showcase/**/*.test.{ts,tsx}', 'scripts/**/*.test.{ts,mjs}'],
+    include: [
+      'src/**/*.test.{ts,tsx}',
+      'showcase/**/*.test.{ts,tsx}',
+      'scripts/**/*.test.{ts,mjs}',
+    ],
     css: false,
   },
 });
