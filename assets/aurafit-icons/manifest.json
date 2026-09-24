@@ -1,0 +1,834 @@
+{
+  "name": "AuraFit icons",
+  "version": "1.0.0",
+  "coverage": "partial-source-coverage",
+  "sourceConversation": "https://chatgpt.com/share/6ab43b31-8054-83e9-8b8b-cdc40b332c1a",
+  "inspected": [
+    "exercises-ai",
+    "calendar",
+    "auth",
+    "rbac"
+  ],
+  "unavailable": [
+    "Painel Aura-Fit: Treine, Evolua, Conquiste",
+    "Dashboard Fitness aura-fit em Português",
+    "Personal trainer branding images"
+  ],
+  "notes": [
+    "Reconstruções vetoriais manuais; detalhes minúsculos nos mockups são aproximados.",
+    "semantic-complement identifica ícones pedidos cujo desenho não foi confirmado nas imagens acessíveis.",
+    "Não há símbolo isolado AuraFit nas referências inspecionadas; foi reconstruído o wordmark.",
+    "A marca pessoal não foi inventada."
+  ],
+  "viewBox": "0 0 24 24",
+  "strokeWidth": 1.7,
+  "png": {
+    "size": 512,
+    "color": "#1f1f1f",
+    "background": "transparent"
+  },
+  "icons": [
+    {
+      "name": "home",
+      "purpose": "Início e navegação principal",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "navigation"
+      ],
+      "svg": "svg/home.svg",
+      "png": "png/home.png"
+    },
+    {
+      "name": "dashboard",
+      "purpose": "Visão geral",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/dashboard.svg",
+      "png": "png/dashboard.png"
+    },
+    {
+      "name": "user",
+      "purpose": "Perfil e aluno",
+      "source": "auth",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "profile",
+        "student"
+      ],
+      "svg": "svg/user.svg",
+      "png": "png/user.png"
+    },
+    {
+      "name": "users",
+      "purpose": "Alunos, usuários e equipes",
+      "source": "rbac",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "students",
+        "teams",
+        "groups"
+      ],
+      "svg": "svg/users.svg",
+      "png": "png/users.png"
+    },
+    {
+      "name": "user-add",
+      "purpose": "Cadastrar usuário",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/user-add.svg",
+      "png": "png/user-add.png"
+    },
+    {
+      "name": "user-check",
+      "purpose": "Presença confirmada",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/user-check.svg",
+      "png": "png/user-check.png"
+    },
+    {
+      "name": "user-minus",
+      "purpose": "Desativar aluno",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/user-minus.svg",
+      "png": "png/user-minus.png"
+    },
+    {
+      "name": "roles",
+      "purpose": "Papéis e responsabilidades",
+      "source": "rbac",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/roles.svg",
+      "png": "png/roles.png"
+    },
+    {
+      "name": "dumbbell",
+      "purpose": "Treinos, exercícios e equipamento",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "workout",
+        "exercises",
+        "equipment"
+      ],
+      "svg": "svg/dumbbell.svg",
+      "png": "png/dumbbell.png"
+    },
+    {
+      "name": "workout-plan",
+      "purpose": "Protocolos de treino",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/workout-plan.svg",
+      "png": "png/workout-plan.png"
+    },
+    {
+      "name": "calendar",
+      "purpose": "Calendário e agenda",
+      "source": "calendar",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "schedule"
+      ],
+      "svg": "svg/calendar.svg",
+      "png": "png/calendar.png"
+    },
+    {
+      "name": "calendar-check",
+      "purpose": "Atendimento confirmado",
+      "source": "calendar",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "attendance"
+      ],
+      "svg": "svg/calendar-check.svg",
+      "png": "png/calendar-check.png"
+    },
+    {
+      "name": "calendar-add",
+      "purpose": "Novo atendimento",
+      "source": "calendar",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/calendar-add.svg",
+      "png": "png/calendar-add.png"
+    },
+    {
+      "name": "calendar-clock",
+      "purpose": "Remarcar horário",
+      "source": "calendar",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/calendar-clock.svg",
+      "png": "png/calendar-clock.png"
+    },
+    {
+      "name": "calendar-x",
+      "purpose": "Falta ou cancelamento",
+      "source": "calendar",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/calendar-x.svg",
+      "png": "png/calendar-x.png"
+    },
+    {
+      "name": "clock",
+      "purpose": "Horário, atraso, manutenção e sessão expirada",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "session-expired",
+        "maintenance"
+      ],
+      "svg": "svg/clock.svg",
+      "png": "png/clock.png"
+    },
+    {
+      "name": "timer",
+      "purpose": "Tempo de descanso",
+      "source": "exercises-ai",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "rest"
+      ],
+      "svg": "svg/timer.svg",
+      "png": "png/timer.png"
+    },
+    {
+      "name": "finance",
+      "purpose": "Financeiro e cobrança",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/finance.svg",
+      "png": "png/finance.png"
+    },
+    {
+      "name": "credit-card",
+      "purpose": "Planos e assinaturas",
+      "source": "auth",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "plans",
+        "subscription"
+      ],
+      "svg": "svg/credit-card.svg",
+      "png": "png/credit-card.png"
+    },
+    {
+      "name": "analytics",
+      "purpose": "Relatórios e evolução",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "reports"
+      ],
+      "svg": "svg/analytics.svg",
+      "png": "png/analytics.png"
+    },
+    {
+      "name": "trend-up",
+      "purpose": "Crescimento de indicadores",
+      "source": "calendar",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/trend-up.svg",
+      "png": "png/trend-up.png"
+    },
+    {
+      "name": "trend-down",
+      "purpose": "Queda de indicadores",
+      "source": "calendar",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/trend-down.svg",
+      "png": "png/trend-down.png"
+    },
+    {
+      "name": "ai-assistant",
+      "purpose": "Prescrição e assistência de IA",
+      "source": "exercises-ai",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/ai-assistant.svg",
+      "png": "png/ai-assistant.png"
+    },
+    {
+      "name": "sparkles",
+      "purpose": "Gerar conteúdo com IA",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [
+        "exercise-generate"
+      ],
+      "svg": "svg/sparkles.svg",
+      "png": "png/sparkles.png"
+    },
+    {
+      "name": "video",
+      "purpose": "Vídeo de exercício",
+      "source": "exercises-ai",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/video.svg",
+      "png": "png/video.png"
+    },
+    {
+      "name": "play",
+      "purpose": "Reproduzir vídeo",
+      "source": "exercises-ai",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/play.svg",
+      "png": "png/play.png"
+    },
+    {
+      "name": "pause",
+      "purpose": "Pausar vídeo",
+      "source": "exercises-ai",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/pause.svg",
+      "png": "png/pause.png"
+    },
+    {
+      "name": "volume",
+      "purpose": "Volume do vídeo",
+      "source": "exercises-ai",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/volume.svg",
+      "png": "png/volume.png"
+    },
+    {
+      "name": "fullscreen",
+      "purpose": "Expandir vídeo",
+      "source": "exercises-ai",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/fullscreen.svg",
+      "png": "png/fullscreen.png"
+    },
+    {
+      "name": "captions",
+      "purpose": "Legendas automáticas",
+      "source": "exercises-ai",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/captions.svg",
+      "png": "png/captions.png"
+    },
+    {
+      "name": "chat",
+      "purpose": "Chat e mensagens",
+      "source": "calendar",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/chat.svg",
+      "png": "png/chat.png"
+    },
+    {
+      "name": "send",
+      "purpose": "Enviar mensagem",
+      "source": "calendar",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/send.svg",
+      "png": "png/send.png"
+    },
+    {
+      "name": "mail",
+      "purpose": "E-mail, envio e verificação",
+      "source": "auth",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/mail.svg",
+      "png": "png/mail.png"
+    },
+    {
+      "name": "notifications",
+      "purpose": "Notificações e alertas",
+      "source": "rbac",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "bell"
+      ],
+      "svg": "svg/notifications.svg",
+      "png": "png/notifications.png"
+    },
+    {
+      "name": "settings",
+      "purpose": "Configurações",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/settings.svg",
+      "png": "png/settings.png"
+    },
+    {
+      "name": "sliders",
+      "purpose": "Preferências",
+      "source": "auth",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/sliders.svg",
+      "png": "png/sliders.png"
+    },
+    {
+      "name": "security",
+      "purpose": "Segurança e política de acesso",
+      "source": "rbac",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "permissions"
+      ],
+      "svg": "svg/security.svg",
+      "png": "png/security.png"
+    },
+    {
+      "name": "lock",
+      "purpose": "Senha, bloqueio e acesso negado",
+      "source": "auth",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "access-denied",
+        "password"
+      ],
+      "svg": "svg/lock.svg",
+      "png": "png/lock.png"
+    },
+    {
+      "name": "key",
+      "purpose": "Credencial e política de senha",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/key.svg",
+      "png": "png/key.png"
+    },
+    {
+      "name": "two-factor",
+      "purpose": "Autenticação em dois fatores",
+      "source": "rbac",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/two-factor.svg",
+      "png": "png/two-factor.png"
+    },
+    {
+      "name": "access-matrix",
+      "purpose": "Matriz de acesso",
+      "source": "rbac",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/access-matrix.svg",
+      "png": "png/access-matrix.png"
+    },
+    {
+      "name": "audit",
+      "purpose": "Auditoria e logs",
+      "source": "rbac",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "document",
+        "notes",
+        "terms"
+      ],
+      "svg": "svg/audit.svg",
+      "png": "png/audit.png"
+    },
+    {
+      "name": "history",
+      "purpose": "Histórico de atividade",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/history.svg",
+      "png": "png/history.png"
+    },
+    {
+      "name": "integrations",
+      "purpose": "Integrações",
+      "source": "rbac",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/integrations.svg",
+      "png": "png/integrations.png"
+    },
+    {
+      "name": "logout",
+      "purpose": "Sair da conta",
+      "source": "auth",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/logout.svg",
+      "png": "png/logout.png"
+    },
+    {
+      "name": "login",
+      "purpose": "Entrar na conta",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/login.svg",
+      "png": "png/login.png"
+    },
+    {
+      "name": "eye",
+      "purpose": "Mostrar senha",
+      "source": "auth",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/eye.svg",
+      "png": "png/eye.png"
+    },
+    {
+      "name": "eye-off",
+      "purpose": "Ocultar senha",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/eye-off.svg",
+      "png": "png/eye-off.png"
+    },
+    {
+      "name": "search",
+      "purpose": "Busca e filtros",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/search.svg",
+      "png": "png/search.png"
+    },
+    {
+      "name": "filter",
+      "purpose": "Filtrar registros",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/filter.svg",
+      "png": "png/filter.png"
+    },
+    {
+      "name": "plus",
+      "purpose": "Adicionar e criar",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "add"
+      ],
+      "svg": "svg/plus.svg",
+      "png": "png/plus.png"
+    },
+    {
+      "name": "minus",
+      "purpose": "Remover ou reduzir",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/minus.svg",
+      "png": "png/minus.png"
+    },
+    {
+      "name": "close",
+      "purpose": "Fechar janela",
+      "source": "rbac",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/close.svg",
+      "png": "png/close.png"
+    },
+    {
+      "name": "check",
+      "purpose": "Confirmação e recomendação",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/check.svg",
+      "png": "png/check.png"
+    },
+    {
+      "name": "check-circle",
+      "purpose": "Sucesso e presença",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "success"
+      ],
+      "svg": "svg/check-circle.svg",
+      "png": "png/check-circle.png"
+    },
+    {
+      "name": "x-circle",
+      "purpose": "Falta e erro",
+      "source": "calendar",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/x-circle.svg",
+      "png": "png/x-circle.png"
+    },
+    {
+      "name": "info",
+      "purpose": "Informação e prescrição",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/info.svg",
+      "png": "png/info.png"
+    },
+    {
+      "name": "help",
+      "purpose": "Ajuda",
+      "source": "auth",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/help.svg",
+      "png": "png/help.png"
+    },
+    {
+      "name": "warning",
+      "purpose": "Alerta de atenção",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/warning.svg",
+      "png": "png/warning.png"
+    },
+    {
+      "name": "chevron-left",
+      "purpose": "Navegação, paginação e seleção",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/chevron-left.svg",
+      "png": "png/chevron-left.png"
+    },
+    {
+      "name": "chevron-right",
+      "purpose": "Navegação, paginação e seleção",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/chevron-right.svg",
+      "png": "png/chevron-right.png"
+    },
+    {
+      "name": "chevron-down",
+      "purpose": "Navegação, paginação e seleção",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/chevron-down.svg",
+      "png": "png/chevron-down.png"
+    },
+    {
+      "name": "chevron-up",
+      "purpose": "Navegação, paginação e seleção",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/chevron-up.svg",
+      "png": "png/chevron-up.png"
+    },
+    {
+      "name": "arrow-right",
+      "purpose": "Navegação, paginação e seleção",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/arrow-right.svg",
+      "png": "png/arrow-right.png"
+    },
+    {
+      "name": "arrow-left",
+      "purpose": "Navegação, paginação e seleção",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/arrow-left.svg",
+      "png": "png/arrow-left.png"
+    },
+    {
+      "name": "more-horizontal",
+      "purpose": "Mais ações",
+      "source": "shared",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/more-horizontal.svg",
+      "png": "png/more-horizontal.png"
+    },
+    {
+      "name": "edit",
+      "purpose": "Editar perfil e permissões",
+      "source": "rbac",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/edit.svg",
+      "png": "png/edit.png"
+    },
+    {
+      "name": "trash",
+      "purpose": "Excluir registro",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/trash.svg",
+      "png": "png/trash.png"
+    },
+    {
+      "name": "export",
+      "purpose": "Exportar registros",
+      "source": "rbac",
+      "status": "visual-reconstruction",
+      "aliases": [
+        "external-link"
+      ],
+      "svg": "svg/export.svg",
+      "png": "png/export.png"
+    },
+    {
+      "name": "download",
+      "purpose": "Baixar arquivo",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/download.svg",
+      "png": "png/download.png"
+    },
+    {
+      "name": "refresh",
+      "purpose": "Gerar outro exercício e atualizar",
+      "source": "exercises-ai",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/refresh.svg",
+      "png": "png/refresh.png"
+    },
+    {
+      "name": "link",
+      "purpose": "Vincular referência",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/link.svg",
+      "png": "png/link.png"
+    },
+    {
+      "name": "pin",
+      "purpose": "Dica do personal",
+      "source": "exercises-ai",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/pin.svg",
+      "png": "png/pin.png"
+    },
+    {
+      "name": "level",
+      "purpose": "Nível de experiência",
+      "source": "exercises-ai",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/level.svg",
+      "png": "png/level.png"
+    },
+    {
+      "name": "sets-reps",
+      "purpose": "Séries e repetições",
+      "source": "exercises-ai",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/sets-reps.svg",
+      "png": "png/sets-reps.png"
+    },
+    {
+      "name": "muscle-group",
+      "purpose": "Grupo muscular",
+      "source": "exercises-ai",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/muscle-group.svg",
+      "png": "png/muscle-group.png"
+    },
+    {
+      "name": "phone",
+      "purpose": "Telefone",
+      "source": "calendar",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/phone.svg",
+      "png": "png/phone.png"
+    },
+    {
+      "name": "location",
+      "purpose": "Atendimento presencial",
+      "source": "calendar",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/location.svg",
+      "png": "png/location.png"
+    },
+    {
+      "name": "heart",
+      "purpose": "Saúde e favoritos",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/heart.svg",
+      "png": "png/heart.png"
+    },
+    {
+      "name": "nutrition",
+      "purpose": "Nutrição",
+      "source": "requested",
+      "status": "semantic-complement",
+      "aliases": [],
+      "svg": "svg/nutrition.svg",
+      "png": "png/nutrition.png"
+    },
+    {
+      "name": "instagram",
+      "purpose": "Rede social na manutenção",
+      "source": "auth",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/instagram.svg",
+      "png": "png/instagram.png"
+    },
+    {
+      "name": "youtube",
+      "purpose": "Rede social na manutenção",
+      "source": "auth",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/youtube.svg",
+      "png": "png/youtube.png"
+    },
+    {
+      "name": "linkedin",
+      "purpose": "Rede social na manutenção",
+      "source": "auth",
+      "status": "visual-reconstruction",
+      "aliases": [],
+      "svg": "svg/linkedin.svg",
+      "png": "png/linkedin.png"
+    }
+  ],
+  "brand": [
+    {
+      "name": "aurafit-wordmark",
+      "purpose": "Assinatura tipográfica AuraFit",
+      "status": "approximate-visual-reconstruction",
+      "svg": "brand/aurafit-wordmark.svg",
+      "png": "brand/aurafit-wordmark.png"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+:root {
+  --af-black: #181818;
+  --af-red: #C50B27;
+  --af-red-hover: #A80B23;
+  --af-red-subtle: #FFF6F8;
+  --af-text-primary: #181A20;
+  --af-text-secondary: #667184;
+  --af-text-placeholder: #8995A5;
+  --af-border: #D9E1EB;
+  --af-surface: #FFFFFF;
+  --af-surface-subtle: #F5F8FB;
+  --af-success: #219765;
+  --af-error: #C50B27;
+  --af-space-4: 4px;
+  --af-space-8: 8px;
+  --af-space-12: 12px;
+  --af-space-16: 16px;
+  --af-space-20: 20px;
+  --af-space-24: 24px;
+  --af-space-32: 32px;
+  --af-space-40: 40px;
+  --af-space-48: 48px;
+  --af-space-64: 64px;
+  --af-radius-4: 4px;
+  --af-radius-5: 5px;
+  --af-radius-8: 8px;
+  --af-radius-10: 10px;
+  --af-radius-12: 12px;
+}
+
+.af-type-display { font-family: Inter, sans-serif; font-weight: 700; font-size: 32px; line-height: 40px; }
+.af-type-heading-lg { font-family: Inter, sans-serif; font-weight: 700; font-size: 26px; line-height: 34px; }
+.af-type-heading-md { font-family: Inter, sans-serif; font-weight: 700; font-size: 22px; line-height: 30px; }
+.af-type-heading-sm { font-family: Inter, sans-serif; font-weight: 600; font-size: 18px; line-height: 26px; }
+.af-type-body { font-family: Inter, sans-serif; font-weight: 400; font-size: 14px; line-height: 22px; }
+.af-type-body-medium { font-family: Inter, sans-serif; font-weight: 500; font-size: 14px; line-height: 22px; }
+.af-type-label { font-family: Inter, sans-serif; font-weight: 600; font-size: 12px; line-height: 18px; }
+.af-type-caption { font-family: Inter, sans-serif; font-weight: 400; font-size: 11px; line-height: 16px; }
+.af-type-button { font-family: Inter, sans-serif; font-weight: 600; font-size: 13px; line-height: 20px; }

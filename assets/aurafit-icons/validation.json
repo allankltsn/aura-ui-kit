@@ -1,0 +1,594 @@
+{
+  "passed": true,
+  "assetPairs": 84,
+  "checks": [
+    {
+      "svg": "brand\\aurafit-wordmark.svg",
+      "png": "brand\\aurafit-wordmark.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\access-matrix.svg",
+      "png": "png\\access-matrix.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\ai-assistant.svg",
+      "png": "png\\ai-assistant.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\analytics.svg",
+      "png": "png\\analytics.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\arrow-left.svg",
+      "png": "png\\arrow-left.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\arrow-right.svg",
+      "png": "png\\arrow-right.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\audit.svg",
+      "png": "png\\audit.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\calendar-add.svg",
+      "png": "png\\calendar-add.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\calendar-check.svg",
+      "png": "png\\calendar-check.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\calendar-clock.svg",
+      "png": "png\\calendar-clock.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\calendar-x.svg",
+      "png": "png\\calendar-x.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\calendar.svg",
+      "png": "png\\calendar.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\captions.svg",
+      "png": "png\\captions.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\chat.svg",
+      "png": "png\\chat.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\check-circle.svg",
+      "png": "png\\check-circle.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\check.svg",
+      "png": "png\\check.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\chevron-down.svg",
+      "png": "png\\chevron-down.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\chevron-left.svg",
+      "png": "png\\chevron-left.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\chevron-right.svg",
+      "png": "png\\chevron-right.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\chevron-up.svg",
+      "png": "png\\chevron-up.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\clock.svg",
+      "png": "png\\clock.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\close.svg",
+      "png": "png\\close.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\credit-card.svg",
+      "png": "png\\credit-card.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\dashboard.svg",
+      "png": "png\\dashboard.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\download.svg",
+      "png": "png\\download.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\dumbbell.svg",
+      "png": "png\\dumbbell.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\edit.svg",
+      "png": "png\\edit.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\export.svg",
+      "png": "png\\export.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\eye-off.svg",
+      "png": "png\\eye-off.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\eye.svg",
+      "png": "png\\eye.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\filter.svg",
+      "png": "png\\filter.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\finance.svg",
+      "png": "png\\finance.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\fullscreen.svg",
+      "png": "png\\fullscreen.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\heart.svg",
+      "png": "png\\heart.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\help.svg",
+      "png": "png\\help.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\history.svg",
+      "png": "png\\history.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\home.svg",
+      "png": "png\\home.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\info.svg",
+      "png": "png\\info.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\instagram.svg",
+      "png": "png\\instagram.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\integrations.svg",
+      "png": "png\\integrations.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\key.svg",
+      "png": "png\\key.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\level.svg",
+      "png": "png\\level.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\link.svg",
+      "png": "png\\link.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\linkedin.svg",
+      "png": "png\\linkedin.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\location.svg",
+      "png": "png\\location.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\lock.svg",
+      "png": "png\\lock.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\login.svg",
+      "png": "png\\login.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\logout.svg",
+      "png": "png\\logout.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\mail.svg",
+      "png": "png\\mail.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\minus.svg",
+      "png": "png\\minus.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\more-horizontal.svg",
+      "png": "png\\more-horizontal.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\muscle-group.svg",
+      "png": "png\\muscle-group.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\notifications.svg",
+      "png": "png\\notifications.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\nutrition.svg",
+      "png": "png\\nutrition.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\pause.svg",
+      "png": "png\\pause.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\phone.svg",
+      "png": "png\\phone.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\pin.svg",
+      "png": "png\\pin.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\play.svg",
+      "png": "png\\play.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\plus.svg",
+      "png": "png\\plus.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\refresh.svg",
+      "png": "png\\refresh.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\roles.svg",
+      "png": "png\\roles.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\search.svg",
+      "png": "png\\search.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\security.svg",
+      "png": "png\\security.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\send.svg",
+      "png": "png\\send.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\sets-reps.svg",
+      "png": "png\\sets-reps.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\settings.svg",
+      "png": "png\\settings.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\sliders.svg",
+      "png": "png\\sliders.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\sparkles.svg",
+      "png": "png\\sparkles.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\timer.svg",
+      "png": "png\\timer.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\trash.svg",
+      "png": "png\\trash.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\trend-down.svg",
+      "png": "png\\trend-down.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\trend-up.svg",
+      "png": "png\\trend-up.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\two-factor.svg",
+      "png": "png\\two-factor.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\user-add.svg",
+      "png": "png\\user-add.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\user-check.svg",
+      "png": "png\\user-check.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\user-minus.svg",
+      "png": "png\\user-minus.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\user.svg",
+      "png": "png\\user.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\users.svg",
+      "png": "png\\users.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\video.svg",
+      "png": "png\\video.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\volume.svg",
+      "png": "png\\volume.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\warning.svg",
+      "png": "png\\warning.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\workout-plan.svg",
+      "png": "png\\workout-plan.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\x-circle.svg",
+      "png": "png\\x-circle.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    },
+    {
+      "svg": "svg\\youtube.svg",
+      "png": "png\\youtube.png",
+      "xml": true,
+      "transparency": true,
+      "nonempty": true
+    }
+  ]
+}
