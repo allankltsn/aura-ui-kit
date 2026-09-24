@@ -93,3 +93,29 @@ Maior arquivo versionado fora de assets/docs/lockfile: `src/icons/icons.generate
 ## Regressão
 Suíte completa antes dos testes descartáveis: 7 arquivos, 72 testes passaram, 0 falharam (`resultado-testes.txt`, `resultado-testes.json`).
 Typecheck, lint, build e format:check saíram com código 0.
+
+---
+
+# Reverificação pós-correção (HEAD `a33dd0c`)
+
+O texto acima é o relatório original (HEAD `5fcaa31`) e fica como histórico. Tudo abaixo foi executado
+na reverificação, no HEAD `a33dd0c`. Provas: `reverificacao.txt`, `crlf-clone.txt`, `adulteracao-*.txt`,
+`contraste.txt`, `determinismo.txt`, `qa-adversarial-icon-spread-saida.txt`.
+
+Suíte completa: typecheck, lint, build, format:check saem com 0; vitest 8 arquivos, 81 testes, 81 passaram, 0 falharam (`resultado-testes.*`).
+
+| # | Achado | Situação | Prova medida agora |
+|---|---|---|---|
+| 1 | autocrlf / sync de tokens | CORRIGIDO | Com `tokens.css` e `icons.generated.ts` em CRLF no disco (`w/crlf`), `tokens-css.test.ts` + `build-icons.test.ts`: 4 de 4 passam. Restaurado com `pnpm tokens`/`pnpm icons`, `git status -- src scripts` vazio. `git ls-files --eol`: `i/lf w/lf attr/text eol=lf` nos dois. Clone limpo com `core.autocrlf=true` (HEAD a33dd0c): arquivos `w/lf`, `pnpm install --frozen-lockfile` 1m29s, `pnpm test` 8 arquivos, 81 testes passaram (`crlf-clone.txt`). `git checkout -- src/tokens/tokens.css` agora volta a passar (`adulteracao-sync-tokens.txt`). |
+| 2 | warning claro 2,20:1 | CORRIGIDO | Antes (histórico) `#e2a400`/`#ffffff` = 2,20. Agora `#b7791f`/`#ffffff` = 3,64 (mín. 3); escuro `#f1b93a`/`#1f1f1f` = 9,22. Alert/Toast ainda não existem, então só o token é verificado. Também passam os novos pares `on-primary/primary-press` (11,03 claro, 7,08 escuro) e `ink/primary-soft` (13,99 e 13,48). Script: 63 verificações, 0 falhas. |
+| 3 | sem sync de ícones | CORRIGIDO | Novo `scripts/build-icons.test.ts`. Path de `arrow-left` adulterado: teste FALHA (1 failed); `pnpm icons` restaura e PASSA (`adulteracao-icons.txt`). |
+| 4 | spread do Icon | CORRIGIDO | `{...rest}` agora vem primeiro; 7 testes de `Icon.test.tsx` passam. Extras meus: `aria-hidden={false} role="button"` sem title => `aria-hidden="true"`, sem `role`; `title="X" aria-hidden role="button"` => sem `aria-hidden`, `role="img"`; `dangerouslySetInnerHTML` malicioso via cast: conteúdo do ícone preservado, sem `script` nem `onerror`; `viewBox`/`stroke`/`focusable` não sobrescrevem (`0 0 24 24`, `currentColor`, `false`). Detalhe novo (Info): `children` forçado por cast agora LANÇA erro do React ("Can only set one of `children` or `props.dangerouslySetInnerHTML`") em vez de ser ignorado; o tipo já omite `children`, então só afeta quem usa cast. |
+| 5 | size 0/negativo/NaN, Logo mínimo 20 | DEFERIDO (não alterado, comportamento inalterado) | Não retestado como defeito; segue no backlog. |
+| 6 | Logo `on-dark` com `text-white` | ACEITO | Sem mudança; painel escuro segue a 17,93:1 (`contraste.txt`). |
+
+Cenários novos sobre o que foi mexido:
+- `.gitattributes` não corrompe PNG: `git ls-files --eol` dos PNGs `01-login.png` e `03-recuperar-senha.png` => `i/-text w/-text attr/text=auto` (binário detectado, sem conversão) e `git status` de `assets/AuraFit-auth-design-kit` vazio (`determinismo.txt`).
+- `tokens.css` idempotente: sha256 igual antes, após a 1ª e após a 2ª execução de `pnpm tokens` (`ecd2a814...4132`); `icons.generated.ts` idem (`2bb5932e...ced8d4`, igual ao lote anterior).
+- axe: 0 violações em Icon (83, com e sem title), Logo (3 variantes), GoogleIcon, AppleIcon (`a11y-axe.txt`).
+
+Nenhum achado novo Crítico, Alto ou Médio. Único item novo: Info sobre `children` via cast lançar erro.

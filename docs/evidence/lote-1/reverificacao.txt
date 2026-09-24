@@ -1,0 +1,37 @@
+# Reverificação pós-correção, HEAD a33dd0c
+$ git ls-files --eol src/tokens/tokens.css src/icons/icons.generated.ts
+i/lf    w/lf    attr/text eol=lf      	src/icons/icons.generated.ts
+i/lf    w/lf    attr/text eol=lf      	src/tokens/tokens.css
+$ git config core.autocrlf
+true
+$ git ls-files | grep -i '.png$' | head -3
+assets/AuraFit-auth-design-kit/backgrounds/01-login.png
+assets/AuraFit-auth-design-kit/backgrounds/03-recuperar-senha.png
+assets/AuraFit-auth-design-kit/backgrounds/04-link-enviado.png
+$ git ls-files --eol <2 PNG>
+i/-text w/-text attr/text=auto        	assets/AuraFit-auth-design-kit/backgrounds/01-login.png
+i/-text w/-text attr/text=auto        	assets/AuraFit-auth-design-kit/backgrounds/03-recuperar-senha.png
+
+== CRLF: converter tokens.css e icons.generated.ts para CRLF
+i/lf    w/crlf  attr/text eol=lf      	src/icons/icons.generated.ts
+i/lf    w/crlf  attr/text eol=lf      	src/tokens/tokens.css
+src/tokens/tokens.css: Unicode text, UTF-8 text, with CRLF line terminators
+$ pnpm exec vitest run scripts/tokens-css.test.ts scripts/build-icons.test.ts
+
+ RUN  v2.1.9 E:/allan/aura-ui-kit
+
+ ✓ scripts/build-icons.test.ts (1 test) 17ms
+ ✓ scripts/tokens-css.test.ts (3 tests) 5ms
+
+ Test Files  2 passed (2)
+      Tests  4 passed (4)
+   Start at  14:05:27
+   Duration  6.56s (transform 137ms, setup 2.00s, collect 112ms, tests 22ms, environment 8.48s, prepare 851ms)
+
+$ pnpm tokens && pnpm icons (restaurar)
+tokens.css atualizado
+83 ícones gerados
+$ git status --short -- src scripts
+(fim, vazio = sem diff)
+i/lf    w/lf    attr/text eol=lf      	src/icons/icons.generated.ts
+i/lf    w/lf    attr/text eol=lf      	src/tokens/tokens.css

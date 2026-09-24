@@ -1,0 +1,6 @@
+QA1 aria-hidden/role com aria-hidden={false} role=button: true null
+QA2 title+aria-hidden+role: null img X
+QA3 malicioso contem script/onerror: false false <path d="M3 11 12 3l9 8M5 10v11h5v-7h4v7h5V10"></path>
+QA4 children via cast: lanca: Can only set one of `children` or `props.dangerouslySetInnerHTML`.
+QA5 viewBox 0 0 24 24 stroke currentColor focusable false
+      Tests  1 passed (1)

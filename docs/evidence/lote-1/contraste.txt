@@ -1,4 +1,6 @@
-Pares lidos de contrast.test.ts: 24
+# Contraste WCAG medido em 2026-09-24T14:05:04-03:00, HEAD a33dd0c. Comando: node docs/evidence/lote-1/scripts/medir-contraste.mjs (exit code 0)
+
+Pares lidos de contrast.test.ts: 27
 
 ### Pares do teste src/tokens/contrast.test.ts
 
@@ -28,6 +30,9 @@ Pares lidos de contrast.test.ts: 24
 | light | primary / surface | #b1111b | #ffffff | 7.08 | 3 | PASSA |
 | light | success / surface | #22a45d | #ffffff | 3.21 | 3 | PASSA |
 | light | danger / surface | #d92d20 | #ffffff | 4.83 | 3 | PASSA |
+| light | warning / surface | #b7791f | #ffffff | 3.64 | 3 | PASSA |
+| light | on-primary / primary-press | #ffffff | #7b0c13 | 11.03 | 4.5 | PASSA |
+| light | ink / primary-soft | #1f1f1f | #fbe8e9 | 13.99 | 4.5 | PASSA |
 | dark | ink / bg | #f5f5f5 | #141414 | 16.90 | 4.5 | PASSA |
 | dark | ink / surface | #f5f5f5 | #1f1f1f | 15.12 | 4.5 | PASSA |
 | dark | ink / surface-2 | #f5f5f5 | #2a2a2a | 13.17 | 4.5 | PASSA |
@@ -52,6 +57,9 @@ Pares lidos de contrast.test.ts: 24
 | dark | primary / surface | #d0202b | #1f1f1f | 3.08 | 3 | PASSA |
 | dark | success / surface | #52d88a | #1f1f1f | 9.06 | 3 | PASSA |
 | dark | danger / surface | #f97066 | #1f1f1f | 5.92 | 3 | PASSA |
+| dark | warning / surface | #f1b93a | #1f1f1f | 9.22 | 3 | PASSA |
+| dark | on-primary / primary-press | #ffffff | #b1111b | 7.08 | 4.5 | PASSA |
+| dark | ink / primary-soft | #f5f5f5 | #451b1e | 13.48 | 4.5 | PASSA |
 
 ### Pares extras (próximos lotes)
 
@@ -60,7 +68,7 @@ Pares lidos de contrast.test.ts: 24
 | light | muted / surface | #5c5c5c | #ffffff | 6.69 | 4.5 | PASSA |
 | light | on-primary / primary-press | #ffffff | #7b0c13 | 11.03 | 4.5 | PASSA |
 | light | ink / primary-soft | #1f1f1f | #fbe8e9 | 13.99 | 4.5 | PASSA |
-| light | warning / surface | #e2a400 | #ffffff | 2.20 | 3 | FALHA (ACHADO) |
+| light | warning / surface | #b7791f | #ffffff | 3.64 | 3 | PASSA |
 | light | line-strong / surface | #cfcfcf | #ffffff | 1.56 | - | informativo |
 | dark | muted / surface | #b0b0b0 | #1f1f1f | 7.60 | 4.5 | PASSA |
 | dark | on-primary / primary-press | #ffffff | #b1111b | 7.08 | 4.5 | PASSA |
@@ -81,4 +89,14 @@ Pares lidos de contrast.test.ts: 24
 | dark primary antes (#b1111b) / surface #1f1f1f | #b1111b | #1f1f1f | 2.33 | 3 | FALHA |
 | dark primary depois (#d0202b, tokens.json) / surface #1f1f1f | #d0202b | #1f1f1f | 3.08 | 3 | PASSA |
 
-Total de verificações com mínimo: 57; falhas: 1
+Total de verificações com mínimo: 63; falhas: 0
+
+### ACHADO 2 (warning claro): CORRIGIDO
+
+| Momento | Par | fg | bg | Razão | Mínimo | Resultado |
+|---|---|---|---|---|---|---|
+| ANTES (histórico, relatório anterior, HEAD 5fcaa31) | light warning / surface | #e2a400 | #ffffff | 2.20 | 3 | FALHA |
+| DEPOIS (medido agora, HEAD a33dd0c) | light warning / surface | #b7791f | #ffffff | 3.64 | 3 | PASSA |
+| DEPOIS (medido agora) | dark warning / surface | #f1b93a | #1f1f1f | 9.22 | 3 | PASSA |
+
+Nota: "dark primary antes (#b1111b)" acima é comparação histórica intencional (FALHA esperada), não é verificação do estado atual.

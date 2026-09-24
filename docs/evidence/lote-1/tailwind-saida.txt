@@ -1,66 +1,32 @@
 $ pnpm exec tailwindcss -i showcase/index.css -o <tmp>/out.css --content <tmp>/t.html
-
 Rebuilding...
 
-Done in 443ms.
-exit code: 0
-13577 /c/Users/Allan/AppData/Local/Temp/tw/out.css
---- .bg-primary
---- .bg-primary\/50
---- .text-on-primary
---- .text-muted
---- .rounded-lg
---- .shadow-elev-2
---- .text-heading-lg
---- .dark .dark\:bg-surface
---- .dark\:bg-surface
---- :root primary vars
-  --color-surface: 255 255 255;
-  --color-muted: 92 92 92;
+Done in 470ms.
+exit=0
   --color-primary: 177 17 27;
-  --color-on-primary: 255 255 255;
-  --color-surface: 31 31 31;
-  --color-muted: 176 176 176;
+  --color-primary-hover: 150 15 23;
+  --color-primary-press: 123 12 19;
+--
+  --color-warning: 183 121 31;
+  --color-warning-bg: 253 240 204;
+  --color-warning-text: 133 88 0;
+--
   --color-primary: 208 32 43;
-  --color-on-primary: 255 255 255;
-$ Trechos da saída (regras extraídas de out.css)
-.bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(var(--color-primary) / var(--tw-bg-opacity, 1));
-}
-NÃO ENCONTRADO .bg-primary/50
-.text-on-primary {
-  --tw-text-opacity: 1;
-  color: rgb(var(--color-on-primary) / var(--tw-text-opacity, 1));
-}
-.text-muted {
-  --tw-text-opacity: 1;
-  color: rgb(var(--color-muted) / var(--tw-text-opacity, 1));
-}
+  --color-primary-hover: 216 50 60;
+  --color-primary-press: 177 17 27;
+--
+  --color-warning: 241 185 58;
+  --color-warning-bg: 62 52 26;
+  --color-warning-text: 241 185 58;
+--
 .rounded-lg {
   border-radius: 12px;
 }
-.shadow-elev-2 {
-  --tw-shadow: 0 4px 14px rgb(31 31 31 / 0.09);
-  --tw-shadow-colored: 0 4px 14px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
+--
+.bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--color-primary) / var(--tw-bg-opacity, 1));
+--
 .text-heading-lg {
   font-size: 26px;
   line-height: 34px;
-  font-weight: 700;
-}
-NÃO ENCONTRADO .dark:bg-surface:is(.dark *)
-
-$ grep -F -A3 (regras com barra/dois-pontos escapados)
-.bg-primary\/50 {
-  background-color: rgb(var(--color-primary) / 0.5);
-}
-
-.dark\:bg-surface:is(.dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(var(--color-surface) / var(--tw-bg-opacity, 1));
-}
-$ grep -n -E "^(:root|\.dark) \{" out.css
-3::root {
-33:.dark {

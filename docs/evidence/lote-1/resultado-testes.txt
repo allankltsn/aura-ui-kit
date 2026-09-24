@@ -16,13 +16,13 @@ $ pnpm exec vitest run --reporter=verbose
 
  RUN  v2.1.9 E:/allan/aura-ui-kit
 
- ✓ src/tokens/preset.test.ts > preset Tailwind > usa dark mode por classe
- ✓ src/tokens/preset.test.ts > preset Tailwind > mapeia cores para variáveis CSS com suporte a opacidade
- ✓ src/tokens/preset.test.ts > preset Tailwind > gera a escala tipográfica a partir dos tokens
- ✓ src/tokens/preset.test.ts > preset Tailwind > expõe raios e sombras
  ✓ scripts/icons-module.test.ts > extractInner > devolve só o miolo do SVG
  ✓ scripts/icons-module.test.ts > extractInner > lança erro para arquivo sem <svg>
  ✓ scripts/icons-module.test.ts > buildIconsModule > gera o módulo com nomes ordenados e o tipo IconName
+ ✓ scripts/build-icons.test.ts > icons.generated.ts > está em dia com assets/aurafit-icons/svg
+ ✓ scripts/tokens-css.test.ts > renderTokensCss > converte hex em canais RGB para suportar opacidade
+ ✓ scripts/tokens-css.test.ts > renderTokensCss > gera o tema escuro sob .dark
+ ✓ scripts/tokens-css.test.ts > renderTokensCss > src/tokens/tokens.css está em dia com tokens.json
  ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > light > ink sobre bg >= 4.5
  ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > light > ink sobre surface >= 4.5
  ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > light > ink sobre surface-2 >= 4.5
@@ -47,6 +47,9 @@ $ pnpm exec vitest run --reporter=verbose
  ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > light > primary sobre surface >= 3
  ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > light > success sobre surface >= 3
  ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > light > danger sobre surface >= 3
+ ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > light > warning sobre surface >= 3
+ ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > light > on-primary sobre primary-press >= 4.5
+ ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > light > ink sobre primary-soft >= 4.5
  ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > dark > ink sobre bg >= 4.5
  ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > dark > ink sobre surface >= 4.5
  ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > dark > ink sobre surface-2 >= 4.5
@@ -71,28 +74,34 @@ $ pnpm exec vitest run --reporter=verbose
  ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > dark > primary sobre surface >= 3
  ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > dark > success sobre surface >= 3
  ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > dark > danger sobre surface >= 3
+ ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > dark > warning sobre surface >= 3
+ ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > dark > on-primary sobre primary-press >= 4.5
+ ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > dark > ink sobre primary-soft >= 4.5
  ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > danger não reaproveita o hex da marca
  ✓ src/tokens/contrast.test.ts > contraste dos tokens (WCAG AA) > light e dark têm as mesmas chaves
- ✓ scripts/tokens-css.test.ts > renderTokensCss > converte hex em canais RGB para suportar opacidade
- ✓ scripts/tokens-css.test.ts > renderTokensCss > gera o tema escuro sob .dark
- ✓ scripts/tokens-css.test.ts > renderTokensCss > src/tokens/tokens.css está em dia com tokens.json
- ✓ src/lib/cn.test.ts > cn > junta classes e ignora valores falsos
- ✓ src/lib/cn.test.ts > cn > resolve conflitos do Tailwind mantendo a última
- ✓ src/lib/cn.test.ts > cn > não confunde tamanhos de fonte customizados com cores de texto
- ✓ src/components/Logo/Logo.test.tsx > Logo > tem nome acessível único, sem ler as partes do wordmark 347ms
+ ✓ src/tokens/preset.test.ts > preset Tailwind > usa dark mode por classe
+ ✓ src/tokens/preset.test.ts > preset Tailwind > mapeia cores para variáveis CSS com suporte a opacidade
+ ✓ src/tokens/preset.test.ts > preset Tailwind > gera a escala tipográfica a partir dos tokens
+ ✓ src/tokens/preset.test.ts > preset Tailwind > expõe raios e sombras
+ ✓ src/components/Logo/Logo.test.tsx > Logo > tem nome acessível único, sem ler as partes do wordmark 393ms
  ✓ src/components/Logo/Logo.test.tsx > Logo > só o hífen é vermelho sobre fundo claro
  ✓ src/components/Logo/Logo.test.tsx > Logo > sobre vermelho o wordmark inteiro fica branco
  ✓ src/components/Logo/Logo.test.tsx > Logo > aplica o tamanho em px e não tem violações de acessibilidade
  ✓ src/icons/Icon.test.tsx > Icon > é decorativo por padrão
- ✓ src/icons/Icon.test.tsx > Icon > com title vira imagem acessível
+ ✓ src/icons/Icon.test.tsx > Icon > com title vira imagem acessível 323ms
  ✓ src/icons/Icon.test.tsx > Icon > usa currentColor para herdar a cor do texto
  ✓ src/icons/Icon.test.tsx > Icon > todo ícone tem conteúdo
+ ✓ src/icons/Icon.test.tsx > Icon > rest não sobrescreve props de segurança
+ ✓ src/icons/Icon.test.tsx > Icon > mescla className e repassa data-*, id, style e onClick
  ✓ src/icons/Icon.test.tsx > Icon > não tem violações de acessibilidade
+ ✓ src/lib/cn.test.ts > cn > junta classes e ignora valores falsos
+ ✓ src/lib/cn.test.ts > cn > resolve conflitos do Tailwind mantendo a última
+ ✓ src/lib/cn.test.ts > cn > não confunde tamanhos de fonte customizados com cores de texto
 
- Test Files  7 passed (7)
-      Tests  72 passed (72)
-   Start at  13:38:10
-   Duration  13.58s (transform 484ms, setup 12.42s, collect 4.52s, tests 1.04s, environment 55.09s, prepare 4.91s)
+ Test Files  8 passed (8)
+      Tests  81 passed (81)
+   Start at  14:03:30
+   Duration  20.95s (transform 868ms, setup 12.31s, collect 6.25s, tests 1.48s, environment 63.64s, prepare 6.74s)
 
 exit code: 0
 
@@ -163,9 +172,9 @@ dist/assets/inter-latin-ext-400-normal-77YHD8bZ.woff       47.56 kB
 dist/assets/inter-latin-ext-500-normal-BxGbmqWO.woff       48.49 kB
 dist/assets/inter-latin-ext-700-normal-TidjK2hL.woff       48.63 kB
 dist/assets/inter-latin-ext-600-normal-CIVaiw4L.woff       48.67 kB
-dist/assets/index-C_bnZUK7.css                             17.55 kB │ gzip:  3.58 kB
-dist/assets/index-CBhPAAx7.js                             142.50 kB │ gzip: 45.75 kB
-✓ built in 4.75s
+dist/assets/index-CO0vRP1h.css                             17.55 kB │ gzip:  3.59 kB
+dist/assets/index-Dt1267PU.js                             142.50 kB │ gzip: 45.75 kB
+✓ built in 4.99s
 exit code: 0
 
 $ pnpm format:check

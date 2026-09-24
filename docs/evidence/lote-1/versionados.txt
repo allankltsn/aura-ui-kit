@@ -1,49 +1,9 @@
 $ git ls-files | grep -Ei "mobile|\.claude|\.serena|\.codex|stackdump"
 (exit grep: 1 ; 1 = nenhuma linha)
-
-$ tamanho dos versionados fora de assets/, docs/ e pnpm-lock.yaml (bytes)
-
-    8009  src/icons/icons.generated.ts
-    2185  src/tokens/tokens.json
-    1837  src/tokens/tokens.css
-    1753  src/icons/SocialIcon.tsx
-    1752  src/tokens/contrast.test.ts
-    1501  package.json
-    1233  src/icons/Icon.test.tsx
-    1102  src/components/Logo/Logo.tsx
-    1095  src/icons/Icon.tsx
-    1046  src/components/Logo/Logo.test.tsx
-     905  src/tokens/preset.test.ts
-     898  src/tokens/preset.ts
-     868  scripts/icons-module.test.ts
-     751  scripts/tokens-css.test.ts
-     732  eslint.config.js
-     693  src/test/setup.ts
-     615  tsconfig.json
-     591  scripts/build-icons.mjs
-     587  src/tokens/contrast.ts
-     579  scripts/icons-module.mjs
-     571  src/lib/cn.ts
-     562  src/lib/cn.test.ts
-     550  scripts/tokens-css.mjs
-     512  vite.config.ts
-     379  showcase/main.tsx
-     349  scripts/build-tokens-css.mjs
-     331  src/test/render.tsx
-     310  index.html
-     224  tailwind.config.ts
-     185  src/test/vitest-axe.d.ts
-     185  showcase/index.css
-     174  src/icons/index.ts
-     119  .prettierrc.json
-     112  .prettierignore
-      91  src/index.ts
-      67  postcss.config.js
-      65  src/components/Logo/index.ts
-      64  .gitignore
-      61  showcase/App.tsx
-       3  .node-version
-      13  README.md (tamanho no HEAD; deletado no working tree desde antes da sessao)
-
-total de arquivos versionados: 411
-versionados em assets/: 367 ; docs/: 2
+$ git ls-files src/__qa__
+components
+icons
+index.ts
+lib
+test
+tokens
