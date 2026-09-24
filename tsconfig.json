@@ -17,6 +17,14 @@
     "baseUrl": ".",
     "paths": { "@/*": ["src/*"] }
   },
-  "include": ["src", "showcase", "scripts", "*.ts"],
-  "exclude": ["node_modules", "dist", "mobile", "docs", "assets"]
+  "include": ["src", "showcase", "scripts", "e2e", "*.ts"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test-results",
+    "playwright-report",
+    "mobile",
+    "docs",
+    "assets"
+  ]
 }
