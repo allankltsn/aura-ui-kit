@@ -9,3 +9,6 @@ export * from './components/Card';
 export * from './hooks';
 export * from './components/Input';
 export * from './components/Dialog';
+export * from './components/Checkbox';
+export * from './components/Switch';
+export * from './components/Segmented';
