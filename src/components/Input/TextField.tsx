@@ -10,14 +10,14 @@ export interface TextFieldProps extends InputProps {
 }
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextField(
-  { label, hint, error, required, id, className, ...rest },
+  { label, hint, error, required, id, className, 'aria-describedby': externalDescribedBy, ...rest },
   ref,
 ) {
   const auto = useId();
   const inputId = id ?? auto;
   const hintId = hint ? `${inputId}-hint` : undefined;
   const errorId = error ? `${inputId}-error` : undefined;
-  const describedBy = [hintId, errorId].filter(Boolean).join(' ') || undefined;
+  const describedBy = [hintId, errorId, externalDescribedBy].filter(Boolean).join(' ') || undefined;
 
   return (
     <div className={cn('flex flex-col gap-1.5', className)}>

@@ -1,0 +1,25 @@
+vitest-axe (axe-core) por componente, jsdom; violacoes por id (vazio = zero)
+axe Button primary => []
+axe Button danger => []
+axe Button outline+leftIcon => []
+axe Button ghost => []
+axe Button loading => []
+axe Button disabled => []
+axe Spinner => []
+axe Badge => []
+axe Alert danger => []
+axe Alert info => []
+axe Card => []
+axe Input aria-label => []
+axe Input password revealable => []
+axe TextField hint+error => []
+axe Checkbox => []
+axe Radio => []
+axe Switch => []
+axe Segmented => []
+axe Dialog aberto => []
+axe ConfirmDialog danger => []
+axe total violacoes => 0
+
+Capturas de tela claro/escuro: NAO geradas. Nao ha UI navegavel neste lote (showcase e Lote 4) e Playwright MCP nao esta exposto.
+Limitacao: jsdom nao calcula contraste real de CSS; contraste medido em contraste.txt.

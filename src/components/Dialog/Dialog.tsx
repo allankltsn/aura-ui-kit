@@ -21,6 +21,10 @@ export function Dialog({ open, onClose, title, description, footer, children }: 
   const requestClose = () => {
     if (closeRequested.current) return;
     closeRequested.current = true;
+    // Só dedupe eventos do mesmo tick (Esc dispara cancel e keydown); pedidos posteriores passam.
+    setTimeout(() => {
+      closeRequested.current = false;
+    }, 0);
     onClose();
   };
 

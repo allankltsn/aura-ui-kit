@@ -1,0 +1,68 @@
+Fonte: teste CONTRASTE em qa-adversarial.test.tsx.txt (medido nesta execucao, formula WCAG de src/tokens/contrast.ts)
+
+light | Button primary texto                     | on-primary #ffffff / primary #b1111b | min 4.5 | medido 7.08 | OK
+light | Button primary hover                     | on-primary #ffffff / primary-hover #960f17 | min 4.5 | medido 8.83 | OK
+light | Button primary press                     | on-primary #ffffff / primary-press #7b0c13 | min 4.5 | medido 11.03 | OK
+light | Button danger texto                      | on-danger #ffffff / danger #d92d20 | min 4.5 | medido 4.83 | OK
+light | Button outline texto                     | ink #1f1f1f / surface #ffffff | min 4.5 | medido 16.48 | OK
+light | Button outline borda                     | faint #666666 / surface #ffffff | min 3 | medido 5.74 | OK
+light | Button outline hover                     | ink #1f1f1f / surface-2 #efefef | min 4.5 | medido 14.33 | OK
+light | Button outline/ghost active              | ink #1f1f1f / line #e3e3e3 | min 4.5 | medido 12.84 | OK
+light | Foco (ring accent-text) sobre surface    | accent-text #b1111b / surface #ffffff | min 3 | medido 7.08 | OK
+light | Badge neutral                            | muted #5c5c5c / surface-2 #efefef | min 4.5 | medido 5.82 | OK
+light | Badge primary                            | accent-text #b1111b / primary-soft #fbe8e9 | min 4.5 | medido 6.01 | OK
+light | Badge success                            | success-text #137a3d / success-bg #e3f5ea | min 4.5 | medido 4.77 | OK
+light | Badge warning                            | warning-text #855800 / warning-bg #fdf0cc | min 4.5 | medido 5.46 | OK
+light | Badge danger                             | danger-text #b42318 / danger-bg #fdecea | min 4.5 | medido 5.75 | OK
+light | Badge info                               | info-text #175cd3 / info-bg #eff4ff | min 4.5 | medido 5.43 | OK
+light | Input texto                              | ink #1f1f1f / surface #ffffff | min 4.5 | medido 16.48 | OK
+light | Input placeholder                        | faint #666666 / surface #ffffff | min 4.5 | medido 5.74 | OK
+light | Input borda                              | faint #666666 / surface #ffffff | min 3 | medido 5.74 | OK
+light | Input borda invalid                      | danger #d92d20 / surface #ffffff | min 3 | medido 4.83 | OK
+light | TextField erro                           | danger-text #b42318 / surface #ffffff | min 4.5 | medido 6.57 | OK
+light | TextField hint                           | muted #5c5c5c / surface #ffffff | min 4.5 | medido 6.69 | OK
+light | TextField asterisco                      | accent-text #b1111b / surface #ffffff | min 4.5 | medido 7.08 | OK
+light | Segmented inativo                        | muted #5c5c5c / surface-2 #efefef | min 4.5 | medido 5.82 | OK
+light | Segmented ativo                          | on-primary #ffffff / primary #b1111b | min 4.5 | medido 7.08 | OK
+light | Segmented ativo vs trilho (nao texto)    | primary #b1111b / surface-2 #efefef | min 3 | medido 6.16 | OK
+light | Switch ligado vs surface                 | primary #b1111b / surface #ffffff | min 3 | medido 7.08 | OK
+light | Switch desligado vs surface              | faint #666666 / surface #ffffff | min 3 | medido 5.74 | OK
+light | Dialog texto                             | ink #1f1f1f / surface #ffffff | min 4.5 | medido 16.48 | OK
+light | Dialog descricao/fechar                  | muted #5c5c5c / surface #ffffff | min 4.5 | medido 6.69 | OK
+light | Card texto                               | ink #1f1f1f / surface #ffffff | min 4.5 | medido 16.48 | OK
+light | Switch polegar branco sobre primary      | #ffffff / #b1111b | min 3 | medido 7.08 | OK
+light | Switch polegar branco sobre faint        | #ffffff / #666666 | min 3 | medido 5.74 | OK
+dark  | Button primary texto                     | on-primary #ffffff / primary #d0202b | min 4.5 | medido 5.35 | OK
+dark  | Button primary hover                     | on-primary #ffffff / primary-hover #d8323c | min 4.5 | medido 4.73 | OK
+dark  | Button primary press                     | on-primary #ffffff / primary-press #b1111b | min 4.5 | medido 7.08 | OK
+dark  | Button danger texto                      | on-danger #1f1f1f / danger #f97066 | min 4.5 | medido 5.92 | OK
+dark  | Button outline texto                     | ink #f5f5f5 / surface #1f1f1f | min 4.5 | medido 15.12 | OK
+dark  | Button outline borda                     | faint #999999 / surface #1f1f1f | min 3 | medido 5.79 | OK
+dark  | Button outline hover                     | ink #f5f5f5 / surface-2 #2a2a2a | min 4.5 | medido 13.17 | OK
+dark  | Button outline/ghost active              | ink #f5f5f5 / line #333333 | min 4.5 | medido 11.59 | OK
+dark  | Foco (ring accent-text) sobre surface    | accent-text #ff6f78 / surface #1f1f1f | min 3 | medido 6.12 | OK
+dark  | Badge neutral                            | muted #b0b0b0 / surface-2 #2a2a2a | min 4.5 | medido 6.62 | OK
+dark  | Badge primary                            | accent-text #ff6f78 / primary-soft #451b1e | min 4.5 | medido 5.46 | OK
+dark  | Badge success                            | success-text #52d88a / success-bg #1f3429 | min 4.5 | medido 7.30 | OK
+dark  | Badge warning                            | warning-text #f1b93a / warning-bg #3e341a | min 4.5 | medido 6.86 | OK
+dark  | Badge danger                             | danger-text #ff8a80 / danger-bg #3a1a18 | min 4.5 | medido 6.86 | OK
+dark  | Badge info                               | info-text #84adff / info-bg #16233d | min 4.5 | medido 7.01 | OK
+dark  | Input texto                              | ink #f5f5f5 / surface #1f1f1f | min 4.5 | medido 15.12 | OK
+dark  | Input placeholder                        | faint #999999 / surface #1f1f1f | min 4.5 | medido 5.79 | OK
+dark  | Input borda                              | faint #999999 / surface #1f1f1f | min 3 | medido 5.79 | OK
+dark  | Input borda invalid                      | danger #f97066 / surface #1f1f1f | min 3 | medido 5.92 | OK
+dark  | TextField erro                           | danger-text #ff8a80 / surface #1f1f1f | min 4.5 | medido 7.22 | OK
+dark  | TextField hint                           | muted #b0b0b0 / surface #1f1f1f | min 4.5 | medido 7.60 | OK
+dark  | TextField asterisco                      | accent-text #ff6f78 / surface #1f1f1f | min 4.5 | medido 6.12 | OK
+dark  | Segmented inativo                        | muted #b0b0b0 / surface-2 #2a2a2a | min 4.5 | medido 6.62 | OK
+dark  | Segmented ativo                          | on-primary #ffffff / primary #d0202b | min 4.5 | medido 5.35 | OK
+dark  | Segmented ativo vs trilho (nao texto)    | primary #d0202b / surface-2 #2a2a2a | min 3 | medido 2.68 | FALHA
+dark  | Switch ligado vs surface                 | primary #d0202b / surface #1f1f1f | min 3 | medido 3.08 | OK
+dark  | Switch desligado vs surface              | faint #999999 / surface #1f1f1f | min 3 | medido 5.79 | OK
+dark  | Dialog texto                             | ink #f5f5f5 / surface #1f1f1f | min 4.5 | medido 15.12 | OK
+dark  | Dialog descricao/fechar                  | muted #b0b0b0 / surface #1f1f1f | min 4.5 | medido 7.60 | OK
+dark  | Card texto                               | ink #f5f5f5 / surface #1f1f1f | min 4.5 | medido 15.12 | OK
+dark  | Switch polegar branco sobre primary      | #ffffff / #d0202b | min 3 | medido 5.35 | OK
+dark  | Switch polegar branco sobre faint        | #ffffff / #999999 | min 3 | medido 2.85 | FALHA
+
+Resumo: 62 OK, 2 FALHA

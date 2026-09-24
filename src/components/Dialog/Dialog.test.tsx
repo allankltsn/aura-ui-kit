@@ -97,6 +97,20 @@ describe('Dialog (fechamento)', () => {
   });
 });
 
+describe('Dialog (pai recusa fechar)', () => {
+  it('novos pedidos de fechamento em ticks seguintes continuam chamando onClose', async () => {
+    const onClose = vi.fn();
+    renderUi(<Dialog open onClose={onClose} title="T" />);
+    const dialog = screen.getByRole('dialog');
+    fireEvent(dialog, new Event('cancel', { cancelable: true }));
+    await new Promise((r) => setTimeout(r, 0));
+    fireEvent(dialog, new Event('cancel', { cancelable: true }));
+    await new Promise((r) => setTimeout(r, 0));
+    fireEvent.click(screen.getByLabelText('Fechar'));
+    expect(onClose).toHaveBeenCalledTimes(3);
+  });
+});
+
 describe('ConfirmDialog', () => {
   it('confirma e cancela', async () => {
     const onConfirm = vi.fn();

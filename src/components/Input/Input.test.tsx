@@ -63,3 +63,14 @@ describe('TextField', () => {
     expect(await axe(container)).toHaveNoViolations();
   });
 });
+
+describe('TextField (aria-describedby do consumidor)', () => {
+  it('mantém hint e erro junto do aria-describedby externo', () => {
+    const { getByLabelText } = renderUi(
+      <TextField label="L" hint="dica" error="ruim" aria-describedby="externo" />,
+    );
+    const described = getByLabelText('L').getAttribute('aria-describedby') ?? '';
+    expect(described.split(' ')).toContain('externo');
+    expect(getByLabelText('L')).toHaveAccessibleDescription(/dica.*ruim/);
+  });
+});
