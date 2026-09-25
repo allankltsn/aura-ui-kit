@@ -1,0 +1,36 @@
+{
+  "panel_count": 8,
+  "icon_names": [
+    "users",
+    "workout-plan",
+    "analytics",
+    "credit-card",
+    "ai-assistant",
+    "eye",
+    "eye-off",
+    "arrow-left",
+    "mail",
+    "check-circle",
+    "clock",
+    "lock",
+    "user",
+    "roles",
+    "security",
+    "key",
+    "search",
+    "filter",
+    "user-add",
+    "more-horizontal",
+    "two-factor",
+    "warning",
+    "home",
+    "google",
+    "apple"
+  ],
+  "font_family": "Inter",
+  "colors": {
+    "dark": "#181818",
+    "red": "#C50B27",
+    "text": "#181A20"
+  }
+}

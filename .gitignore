@@ -6,3 +6,4 @@ coverage
 .superpowers
 test-results
 playwright-report
+.claudelens
