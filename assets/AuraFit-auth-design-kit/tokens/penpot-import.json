@@ -1,0 +1,201 @@
+{
+  "AuraFit / Core": {
+    "color": {
+      "black": {
+        "$value": "#181818",
+        "$type": "color"
+      },
+      "red": {
+        "$value": "#C50B27",
+        "$type": "color"
+      },
+      "red-hover": {
+        "$value": "#A80B23",
+        "$type": "color"
+      },
+      "red-subtle": {
+        "$value": "#FFF6F8",
+        "$type": "color"
+      },
+      "text-primary": {
+        "$value": "#181A20",
+        "$type": "color"
+      },
+      "text-secondary": {
+        "$value": "#667184",
+        "$type": "color"
+      },
+      "text-placeholder": {
+        "$value": "#8995A5",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "#D9E1EB",
+        "$type": "color"
+      },
+      "surface": {
+        "$value": "#FFFFFF",
+        "$type": "color"
+      },
+      "surface-subtle": {
+        "$value": "#F5F8FB",
+        "$type": "color"
+      },
+      "success": {
+        "$value": "#219765",
+        "$type": "color"
+      },
+      "error": {
+        "$value": "#C50B27",
+        "$type": "color"
+      }
+    },
+    "space": {
+      "4": {
+        "$value": 4,
+        "$type": "dimension"
+      },
+      "8": {
+        "$value": 8,
+        "$type": "dimension"
+      },
+      "12": {
+        "$value": 12,
+        "$type": "dimension"
+      },
+      "16": {
+        "$value": 16,
+        "$type": "dimension"
+      },
+      "20": {
+        "$value": 20,
+        "$type": "dimension"
+      },
+      "24": {
+        "$value": 24,
+        "$type": "dimension"
+      },
+      "32": {
+        "$value": 32,
+        "$type": "dimension"
+      },
+      "40": {
+        "$value": 40,
+        "$type": "dimension"
+      },
+      "48": {
+        "$value": 48,
+        "$type": "dimension"
+      },
+      "64": {
+        "$value": 64,
+        "$type": "dimension"
+      }
+    },
+    "radius": {
+      "4": {
+        "$value": 4,
+        "$type": "borderRadius"
+      },
+      "5": {
+        "$value": 5,
+        "$type": "borderRadius"
+      },
+      "8": {
+        "$value": 8,
+        "$type": "borderRadius"
+      },
+      "10": {
+        "$value": 10,
+        "$type": "borderRadius"
+      },
+      "12": {
+        "$value": 12,
+        "$type": "borderRadius"
+      }
+    },
+    "typography": {
+      "display": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Inter",
+          "fontWeight": "700",
+          "fontSize": "32px",
+          "lineHeight": "40px"
+        }
+      },
+      "heading-lg": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Inter",
+          "fontWeight": "700",
+          "fontSize": "26px",
+          "lineHeight": "34px"
+        }
+      },
+      "heading-md": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Inter",
+          "fontWeight": "700",
+          "fontSize": "22px",
+          "lineHeight": "30px"
+        }
+      },
+      "heading-sm": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Inter",
+          "fontWeight": "600",
+          "fontSize": "18px",
+          "lineHeight": "26px"
+        }
+      },
+      "body": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Inter",
+          "fontWeight": "400",
+          "fontSize": "14px",
+          "lineHeight": "22px"
+        }
+      },
+      "body-medium": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Inter",
+          "fontWeight": "500",
+          "fontSize": "14px",
+          "lineHeight": "22px"
+        }
+      },
+      "label": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Inter",
+          "fontWeight": "600",
+          "fontSize": "12px",
+          "lineHeight": "18px"
+        }
+      },
+      "caption": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Inter",
+          "fontWeight": "400",
+          "fontSize": "11px",
+          "lineHeight": "16px"
+        }
+      },
+      "button": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Inter",
+          "fontWeight": "600",
+          "fontSize": "13px",
+          "lineHeight": "20px"
+        }
+      }
+    }
+  }
+}

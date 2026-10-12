@@ -1,0 +1,120 @@
+
+ RUN  v2.1.9 E:/allan/aura-ui-kit
+
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (a) cn > entradas variadas
+QA| null/undefined/false/0/vazio => "a"
+QA| objeto => "a c"
+QA| arrays aninhados => "a b c d e"
+QA| duplicadas => "p-2 flex"
+QA| conflito p-2 p-4 => "p-4"
+QA| text-body text-primary => "text-body text-primary"
+QA| text-caption text-ink => "text-caption text-ink"
+QA| text-primary text-body (ordem inversa) => "text-primary text-body"
+QA| text-body text-heading-lg => "text-heading-lg"
+QA| text-button text-on-primary => "text-button text-on-primary"
+QA| text-button text-caption => "text-caption"
+QA| text-primary text-ink => "text-ink"
+QA| text-body-medium text-muted => "text-body-medium text-muted"
+QA| text-label text-accent-text text-sm => "text-accent-text text-sm"
+QA| vazio => ""
+
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (b) Icon > nome inexistente forçado
+QA| nome inexistente => {"err":null,"html":"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\" class=\"shrink-0\"></svg>"}
+
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (b) Icon > size 0, negativo, fracionário, NaN
+QA| size=0 => {"width":"0","height":"0"}
+QA| size=-5 => {"width":"-5","height":"-5"}
+QA| size=12.5 => {"width":"12.5","height":"12.5"}
+QA| size=NaN => {"width":"NaN","height":"NaN"}
+
+stderr | src/__qa__/lote-1.adversarial.test.tsx > (b) Icon > size 0, negativo, fracionário, NaN
+Warning: Received NaN for the `width` attribute. If this is expected, cast the value to a string.
+    at svg
+    at Icon (E:\allan\aura-ui-kit\src\icons\Icon.tsx:7:17)
+Warning: Received NaN for the `height` attribute. If this is expected, cast the value to a string.
+    at svg
+    at Icon (E:\allan\aura-ui-kit\src\icons\Icon.tsx:7:17)
+
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (b) Icon > title vazio, title normal
+QA| title vazio => {"role":null,"ariaHidden":"true","ariaLabel":""}
+QA| title=Buscar => {"role":"img","ariaHidden":null,"ariaLabel":"Buscar"}
+
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (b) Icon > className duplicada e repasse de props
+QA| class => "text-primary shrink-0"
+QA| data-foo => "bar"
+QA| onClick chamado => 1
+
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (b) Icon > sobrescrever aria-hidden, role, innerHTML via props
+QA| aria-hidden={false} sem title => "false"
+QA| title + aria-hidden => {"ariaHidden":"true","role":"img"}
+QA| role=button sem title => {"role":"button","ariaHidden":"true"}
+QA| override innerHTML via rest => "<circle r=\"1\"></circle>"
+QA| override stroke/viewBox => {"stroke":"red","sw":"3","vb":"0 0 5 5"}
+
+ ✓ src/__qa__/lote-1.adversarial.test.tsx > (a) cn > entradas variadas
+ ✓ src/__qa__/lote-1.adversarial.test.tsx > (b) Icon > nome inexistente forçado
+ ✓ src/__qa__/lote-1.adversarial.test.tsx > (b) Icon > size 0, negativo, fracionário, NaN
+ ✓ src/__qa__/lote-1.adversarial.test.tsx > (b) Icon > title vazio, title normal
+ ✓ src/__qa__/lote-1.adversarial.test.tsx > (b) Icon > className duplicada e repasse de props
+ ✓ src/__qa__/lote-1.adversarial.test.tsx > (b) Icon > sobrescrever aria-hidden, role, innerHTML via props
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (c) todos os icones > 83 icones: viewBox 24, conteudo, axe
+QA| icones => {"total":83,"badVb":0,"empty":0,"violacoesSemTitle":0,"violacoesComTitle":0,"msTotal":4817,"msSoAxeSemTitle":2420}
+
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (d) Logo > tamanhos
+QA| Logo size=0 => {"style":"font-size: 0px;"}
+QA| Logo size=20 => {"style":"font-size: 20px;"}
+QA| Logo size=64 => {"style":"font-size: 64px;"}
+QA| Logo size=27.5 => {"style":"font-size: 27.5px;"}
+QA| Logo size=-10 => {"style":null}
+QA| Logo size=NaN => {"style":null}
+
+stderr | src/__qa__/lote-1.adversarial.test.tsx > (d) Logo > tamanhos
+Warning: `NaN` is an invalid value for the `fontSize` css style property.
+    at span
+    at Logo (E:\allan\aura-ui-kit\src\components\Logo\Logo.tsx:15:17)
+
+ ✓ src/__qa__/lote-1.adversarial.test.tsx > (c) todos os icones > 83 icones: viewBox 24, conteudo, axe 4823ms
+ ✓ src/__qa__/lote-1.adversarial.test.tsx > (d) Logo > tamanhos
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (d) Logo > variantes, nome acessivel unico, hifen
+QA| Logo on-light => {"imgsComNome":1,"elementosComAriaLabel":1,"filhosAriaHidden":3,"hyphenClass":"text-primary","rootClass":"inline-flex items-baseline font-bold leading-none tracking-[-0.045em] text-ink","axe":0}
+
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (d) Logo > variantes, nome acessivel unico, hifen
+QA| Logo on-dark => {"imgsComNome":1,"elementosComAriaLabel":1,"filhosAriaHidden":3,"hyphenClass":"text-primary","rootClass":"inline-flex items-baseline font-bold leading-none tracking-[-0.045em] text-white","axe":0}
+
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (d) Logo > variantes, nome acessivel unico, hifen
+QA| Logo on-red => {"imgsComNome":1,"elementosComAriaLabel":1,"filhosAriaHidden":3,"hyphenClass":"text-on-primary","rootClass":"inline-flex items-baseline font-bold leading-none tracking-[-0.045em] text-on-primary","axe":0}
+QA| Logo className text-primary sobre on-light => "inline-flex items-baseline font-bold leading-none tracking-[-0.045em] text-primary"
+
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (e) sociais > aria-hidden e tamanhos
+QA| GoogleIcon size=undefined => {"ariaHidden":"true","w":"18","h":"18","vb":"0 0 18 18"}
+QA| GoogleIcon size=0 => {"ariaHidden":"true","w":"0","h":"0","vb":"0 0 18 18"}
+QA| GoogleIcon size=24 => {"ariaHidden":"true","w":"24","h":"24","vb":"0 0 18 18"}
+QA| GoogleIcon size=-3 => {"ariaHidden":"true","w":"-3","h":"-3","vb":"0 0 18 18"}
+
+ ✓ src/__qa__/lote-1.adversarial.test.tsx > (d) Logo > variantes, nome acessivel unico, hifen
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (e) sociais > aria-hidden e tamanhos
+QA| GoogleIcon axe => 0
+QA| AppleIcon size=undefined => {"ariaHidden":"true","w":"18","h":"18","vb":"0 0 18 18"}
+QA| AppleIcon size=0 => {"ariaHidden":"true","w":"0","h":"0","vb":"0 0 18 18"}
+QA| AppleIcon size=24 => {"ariaHidden":"true","w":"24","h":"24","vb":"0 0 18 18"}
+QA| AppleIcon size=-3 => {"ariaHidden":"true","w":"-3","h":"-3","vb":"0 0 18 18"}
+
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (e) sociais > aria-hidden e tamanhos
+QA| AppleIcon axe => 0
+
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (g) tokens > chaves e hex
+QA| hex invalidos => []
+QA| n chaves por tema => 27
+
+stdout | src/__qa__/lote-1.adversarial.test.tsx > (g) tokens > tokens.css tem 1 var por chave em cada tema
+QA| ocorrencias --color- => 54
+
+ ✓ src/__qa__/lote-1.adversarial.test.tsx > (e) sociais > aria-hidden e tamanhos
+ ✓ src/__qa__/lote-1.adversarial.test.tsx > (g) tokens > chaves e hex
+ ✓ src/__qa__/lote-1.adversarial.test.tsx > (g) tokens > tokens.css tem 1 var por chave em cada tema
+
+ Test Files  1 passed (1)
+      Tests  12 passed (12)
+   Start at  13:41:12
+   Duration  13.29s (transform 222ms, setup 1.01s, collect 1.54s, tests 5.18s, environment 4.61s, prepare 305ms)
+

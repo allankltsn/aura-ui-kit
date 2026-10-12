@@ -1,0 +1,23 @@
+import { render } from '@testing-library/react';
+import { axe } from 'vitest-axe';
+import { Icon } from '@/icons/Icon';
+import { iconPaths, type IconName } from '@/icons/icons.generated';
+import { GoogleIcon, AppleIcon } from '@/icons/SocialIcon';
+import { Logo } from '@/components/Logo/Logo';
+const log = (k: string, v: unknown) => console.log('QA| ' + k + ' => ' + JSON.stringify(v));
+it('axe', async () => {
+  const names = Object.keys(iconPaths) as IconName[];
+  let v1 = 0, v2 = 0;
+  for (const n of names) {
+    const a = render(<Icon name={n} />); v1 += (await axe(a.container)).violations.length; a.unmount();
+    const b = render(<Icon name={n} title={n} />); v2 += (await axe(b.container)).violations.length; b.unmount();
+  }
+  log('icones', { total: names.length, violacoesSemTitle: v1, violacoesComTitle: v2 });
+  for (const variant of ['on-light', 'on-dark', 'on-red'] as const) {
+    const { container } = render(<div className={variant === 'on-dark' ? 'bg-neutral-900' : ''}><Logo variant={variant} /></div>);
+    log('Logo ' + variant + ' axe', (await axe(container)).violations.length);
+  }
+  for (const [n, C] of [['GoogleIcon', GoogleIcon], ['AppleIcon', AppleIcon]] as const) {
+    const { container } = render(<C />); log(n + ' axe', (await axe(container)).violations.length);
+  }
+}, 120000);

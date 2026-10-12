@@ -1,0 +1,12 @@
+$ adulterar icons.generated.ts (arrow-left) e rodar scripts/build-icons.test.ts
+ src/icons/icons.generated.ts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  scripts/build-icons.test.ts > icons.generated.ts > está em dia com assets/aurafit-icons/svg
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+$ pnpm icons (restaurar)
+83 ícones gerados
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+(git status src/scripts vazio acima)

@@ -1,0 +1,16 @@
+import { render } from '@testing-library/react';
+import { Icon } from '@/icons';
+it('adv', () => {
+  const a = render(<Icon name="home" aria-hidden={false} role="button" />).container.querySelector('svg')!;
+  console.log('QA1 aria-hidden/role com aria-hidden={false} role=button:', a.getAttribute('aria-hidden'), a.getAttribute('role'));
+  const b = render(<Icon name="home" title="X" aria-hidden role="button" />).container.querySelector('svg')!;
+  console.log('QA2 title+aria-hidden+role:', b.getAttribute('aria-hidden'), b.getAttribute('role'), b.getAttribute('aria-label'));
+  const evil = { dangerouslySetInnerHTML: { __html: '<script>alert(1)</script><image href=x onerror=alert(1) />' } } as any;
+  const c = render(<Icon name="home" {...evil} />).container.querySelector('svg')!;
+  console.log('QA3 malicioso contem script/onerror:', c.innerHTML.includes('script'), c.innerHTML.includes('onerror'), c.innerHTML.slice(0, 60));
+  let q4 = 'sem erro';
+  try { render(<Icon name="home" {...({ children: <circle /> } as any)} />); } catch (e) { q4 = 'lanca: ' + (e as Error).message; }
+  console.log('QA4 children via cast:', q4);
+  const e = render(<Icon name="home" viewBox="0 0 5 5" stroke="red" focusable="true" />).container.querySelector('svg')!;
+  console.log('QA5 viewBox', e.getAttribute('viewBox'), 'stroke', e.getAttribute('stroke'), 'focusable', e.getAttribute('focusable'));
+});

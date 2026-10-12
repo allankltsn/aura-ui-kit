@@ -1,0 +1,32 @@
+$ pnpm exec tailwindcss -i showcase/index.css -o <tmp>/out.css --content <tmp>/t.html
+Rebuilding...
+
+Done in 470ms.
+exit=0
+  --color-primary: 177 17 27;
+  --color-primary-hover: 150 15 23;
+  --color-primary-press: 123 12 19;
+--
+  --color-warning: 183 121 31;
+  --color-warning-bg: 253 240 204;
+  --color-warning-text: 133 88 0;
+--
+  --color-primary: 208 32 43;
+  --color-primary-hover: 216 50 60;
+  --color-primary-press: 177 17 27;
+--
+  --color-warning: 241 185 58;
+  --color-warning-bg: 62 52 26;
+  --color-warning-text: 241 185 58;
+--
+.rounded-lg {
+  border-radius: 12px;
+}
+--
+.bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--color-primary) / var(--tw-bg-opacity, 1));
+--
+.text-heading-lg {
+  font-size: 26px;
+  line-height: 34px;

@@ -1,0 +1,73 @@
+$ git log --oneline 2b2048d..HEAD
+a33dd0c fix(lote-1): corrige achados do QA (line endings, contraste do warning, sync de ícones, spread do Icon)
+abe0c23 docs(evidence): evidências do lote 1 (QA)
+5fcaa31 feat(icons): Icon gerado dos SVGs da marca, ícones sociais e Logo
+ca6354d feat(tokens): tokens únicos, CSS vars, preset Tailwind e teste de contraste
+fdb7f21 chore: fixar eslint 9 e formatar com prettier
+0d3ca02 chore: scaffold do UI Kit (Vite, React 18, Tailwind 3.4, Vitest)
+
+$ git diff --stat 2b2048d..HEAD | tail -1
+ 60 files changed, 6901 insertions(+)
+
+$ git diff --stat 2b2048d..HEAD (completo)
+ .gitattributes                                   |    5 +
+ .gitignore                                       |    6 +
+ .node-version                                    |    1 +
+ .prettierignore                                  |   11 +
+ .prettierrc.json                                 |    6 +
+ docs/evidence/lote-1/RESUMO.md                   |   45 +
+ docs/evidence/lote-1/a11y-axe.txt                |   34 +
+ docs/evidence/lote-1/adulteracao-icons.txt       |    8 +
+ docs/evidence/lote-1/adulteracao-sync-tokens.txt |  271 ++
+ docs/evidence/lote-1/como-testar.md              |   28 +
+ docs/evidence/lote-1/contraste.txt               |   84 +
+ docs/evidence/lote-1/crlf-clone.txt              |    4 +
+ docs/evidence/lote-1/determinismo.txt            |   41 +
+ docs/evidence/lote-1/git-log.txt                 |   52 +
+ docs/evidence/lote-1/qa-adversarial-saida.txt    |  120 +
+ docs/evidence/lote-1/qa-adversarial.test.tsx.txt |  228 ++
+ docs/evidence/lote-1/qa-relatorio.md             |   95 +
+ docs/evidence/lote-1/resultado-testes.json       |    1 +
+ docs/evidence/lote-1/resultado-testes.txt        |  179 +
+ docs/evidence/lote-1/scripts/medir-contraste.mjs |   41 +
+ docs/evidence/lote-1/tailwind-saida.txt          |   66 +
+ docs/evidence/lote-1/versionados.txt             |   49 +
+ eslint.config.js                                 |   22 +
+ index.html                                       |   12 +
+ package.json                                     |   56 +
+ pnpm-lock.yaml                                   | 4560 ++++++++++++++++++++++
+ postcss.config.js                                |    1 +
+ scripts/build-icons.mjs                          |   11 +
+ scripts/build-icons.test.ts                      |   21 +
+ scripts/build-tokens-css.mjs                     |    8 +
+ scripts/icons-module.mjs                         |   16 +
+ scripts/icons-module.test.ts                     |   23 +
+ scripts/tokens-css.mjs                           |   18 +
+ scripts/tokens-css.test.ts                       |   24 +
+ showcase/App.tsx                                 |    3 +
+ showcase/index.css                               |   11 +
+ showcase/main.tsx                                |   14 +
+ src/components/Logo/Logo.test.tsx                |   26 +
+ src/components/Logo/Logo.tsx                     |   43 +
+ src/components/Logo/index.ts                     |    1 +
+ src/icons/Icon.test.tsx                          |   73 +
+ src/icons/Icon.tsx                               |   34 +
+ src/icons/SocialIcon.tsx                         |   50 +
+ src/icons/icons.generated.ts                     |   88 +
+ src/icons/index.ts                               |    3 +
+ src/index.ts                                     |    3 +
+ src/lib/cn.test.ts                               |   17 +
+ src/lib/cn.ts                                    |   28 +
+ src/test/render.tsx                              |    9 +
+ src/test/setup.ts                                |   19 +
+ src/test/vitest-axe.d.ts                         |   10 +
+ src/tokens/contrast.test.ts                      |   58 +
+ src/tokens/contrast.ts                           |   17 +
+ src/tokens/preset.test.ts                        |   24 +
+ src/tokens/preset.ts                             |   36 +
+ src/tokens/tokens.css                            |   60 +
+ src/tokens/tokens.json                           |   79 +
+ tailwind.config.ts                               |    7 +
+ tsconfig.json                                    |   22 +
+ vite.config.ts                                   |   19 +
+ 60 files changed, 6901 insertions(+)

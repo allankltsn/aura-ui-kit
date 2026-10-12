@@ -1,0 +1,338 @@
+import { useState } from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { axe } from 'vitest-axe';
+import tokens from '@/tokens/tokens.json';
+import { contrastRatio } from '@/tokens/contrast';
+import { Button } from '@/components/Button';
+import { Spinner } from '@/components/Spinner';
+import { Badge } from '@/components/Badge';
+import { Alert } from '@/components/Alert';
+import { Card } from '@/components/Card';
+import { Input, TextField } from '@/components/Input';
+import { Dialog, ConfirmDialog } from '@/components/Dialog';
+import { Checkbox, Radio } from '@/components/Checkbox';
+import { Switch } from '@/components/Switch';
+import { Segmented } from '@/components/Segmented';
+
+const log = (k: string, v: unknown) => console.log('QA| ' + k + ' => ' + JSON.stringify(v));
+const opts = [
+  { value: 'a', label: 'A' },
+  { value: 'b', label: 'B' },
+];
+
+it('AXE por componente', async () => {
+  const cases: Array<[string, React.ReactElement]> = [
+    ['Button primary', <Button>Salvar</Button>],
+    ['Button danger', <Button variant="danger">Excluir</Button>],
+    [
+      'Button outline+leftIcon',
+      <Button variant="outline" leftIcon="close">
+        X
+      </Button>,
+    ],
+    ['Button ghost', <Button variant="ghost">G</Button>],
+    ['Button loading', <Button loading>Salvando</Button>],
+    ['Button disabled', <Button disabled>Off</Button>],
+    ['Spinner', <Spinner label="Carregando" />],
+    [
+      'Badge',
+      <Badge tone="success" icon="check-circle">
+        Ativo
+      </Badge>,
+    ],
+    [
+      'Alert danger',
+      <Alert tone="danger" title="Erro" onDismiss={() => {}}>
+        Falhou
+      </Alert>,
+    ],
+    ['Alert info', <Alert tone="info">Info</Alert>],
+    ['Card', <Card>Conteúdo</Card>],
+    ['Input aria-label', <Input aria-label="Nome" />],
+    ['Input password revealable', <Input aria-label="Senha" type="password" revealable />],
+    ['TextField hint+error', <TextField label="E-mail" hint="dica" error="inválido" required />],
+    ['Checkbox', <Checkbox label="Aceito" description="termos" />],
+    ['Radio', <Radio label="Opção" name="r" />],
+    ['Switch', <Switch label="Notificações" />],
+    ['Segmented', <Segmented aria-label="Período" options={opts} />],
+    [
+      'Dialog aberto',
+      <Dialog open onClose={() => {}} title="T" description="d">
+        corpo
+      </Dialog>,
+    ],
+    [
+      'ConfirmDialog danger',
+      <ConfirmDialog open onClose={() => {}} onConfirm={() => {}} title="Excluir" tone="danger" />,
+    ],
+  ];
+  let total = 0;
+  for (const [name, el] of cases) {
+    const { container, unmount } = render(el);
+    const r = await axe(container);
+    log('axe ' + name, r.violations.map((v) => v.id));
+    total += r.violations.length;
+    unmount();
+  }
+  log('axe total violacoes', total);
+  expect(total).toBe(0);
+}, 120000);
+
+describe('ADVERSARIAL', () => {
+  it('D1 Dialog: pai que recusa fechar nao pode travar Esc/X seguintes', () => {
+    const onClose = vi.fn();
+    render(<Dialog open onClose={onClose} title="T" />);
+    const d = screen.getByRole('dialog');
+    fireEvent(d, new Event('cancel', { cancelable: true }));
+    fireEvent(d, new Event('cancel', { cancelable: true }));
+    fireEvent.click(screen.getByLabelText('Fechar'));
+    expect(onClose).toHaveBeenCalledTimes(3);
+  });
+
+  it('Dialog: reabrir reseta a trava (controle)', () => {
+    const onClose = vi.fn();
+    const { rerender } = render(<Dialog open onClose={onClose} title="T" />);
+    fireEvent.click(screen.getByLabelText('Fechar'));
+    rerender(<Dialog open={false} onClose={onClose} title="T" />);
+    rerender(<Dialog open onClose={onClose} title="T" />);
+    fireEvent.click(screen.getByLabelText('Fechar'));
+    expect(onClose).toHaveBeenCalledTimes(2);
+  });
+
+  it('Dialog: backdrop fecha e foco volta ao gatilho', async () => {
+    const user = userEvent.setup();
+    const onClose = vi.fn();
+    function App() {
+      const [o, setO] = useState(false);
+      return (
+        <>
+          <button onClick={() => setO(true)}>abrir</button>
+          <Dialog
+            open={o}
+            onClose={() => {
+              onClose();
+              setO(false);
+            }}
+            title="T"
+          />
+        </>
+      );
+    }
+    render(<App />);
+    await user.click(screen.getByText('abrir'));
+    fireEvent.click(screen.getByRole('dialog'));
+    expect(onClose).toHaveBeenCalledTimes(1);
+    expect(screen.getByText('abrir')).toHaveFocus();
+  });
+
+  it('Dialog: clique dentro do conteudo nao fecha', () => {
+    const onClose = vi.fn();
+    render(<Dialog open onClose={onClose} title="Título" />);
+    fireEvent.click(screen.getByText('Título'));
+    expect(onClose).not.toHaveBeenCalled();
+  });
+
+  it('Button loading: nao dispara onClick e mantem aria-busy', async () => {
+    const user = userEvent.setup();
+    const fn = vi.fn();
+    render(
+      <Button loading onClick={fn}>
+        Ok
+      </Button>,
+    );
+    await user.click(screen.getByRole('button'));
+    expect(fn).not.toHaveBeenCalled();
+    expect(screen.getByRole('button')).toHaveAttribute('aria-busy', 'true');
+  });
+
+  it('Button disabled em form nao submete', async () => {
+    const user = userEvent.setup();
+    const s = vi.fn((e: React.FormEvent) => e.preventDefault());
+    render(
+      <form onSubmit={s}>
+        <Button type="submit" disabled>
+          x
+        </Button>
+      </form>,
+    );
+    await user.click(screen.getByRole('button'));
+    expect(s).not.toHaveBeenCalled();
+  });
+
+  it('Switch: Space/Enter chamam onCheckedChange; controlado nao muda sem o pai', async () => {
+    const user = userEvent.setup();
+    const fn = vi.fn();
+    render(<Switch label="s" checked={false} onCheckedChange={fn} />);
+    const sw = screen.getByRole('switch');
+    sw.focus();
+    await user.keyboard(' ');
+    await user.keyboard('{Enter}');
+    expect(fn).toHaveBeenCalledTimes(2);
+    expect(sw).toHaveAttribute('aria-checked', 'false');
+  });
+
+  it('Switch disabled', async () => {
+    const user = userEvent.setup();
+    const fn = vi.fn();
+    render(<Switch label="s" disabled onCheckedChange={fn} />);
+    await user.click(screen.getByRole('switch'));
+    expect(fn).not.toHaveBeenCalled();
+  });
+
+  it('D2 Switch participa de formulario (name)', () => {
+    const { container } = render(
+      <form>
+        <Switch label="s" defaultChecked name="notif" />
+      </form>,
+    );
+    const fd = new FormData(container.querySelector('form')!);
+    expect(fd.get('notif')).not.toBeNull();
+  });
+
+  it('Segmented: seta direita seleciona proxima', async () => {
+    const user = userEvent.setup();
+    const fn = vi.fn();
+    render(<Segmented aria-label="p" onValueChange={fn} options={opts} />);
+    await user.tab();
+    await user.keyboard('{ArrowRight}');
+    expect(fn).toHaveBeenCalledWith('b');
+  });
+
+  it('Segmented: options vazio nao quebra', () => {
+    render(<Segmented aria-label="p" options={[]} />);
+    expect(screen.getByRole('radiogroup')).toBeInTheDocument();
+  });
+
+  it('D3 Segmented aceita disabled', () => {
+    render(<Segmented aria-label="p" {...({ disabled: true } as object)} options={opts} />);
+    expect(screen.getAllByRole('radio')[0]).toBeDisabled();
+  });
+
+  it('Segmented: value inexistente nao marca nada nem quebra', () => {
+    render(<Segmented aria-label="p" value={'z' as 'a'} options={opts} />);
+    expect(screen.getAllByRole('radio')[0]).not.toBeChecked();
+  });
+
+  it('Segmented: duas instancias tem name distinto', () => {
+    render(
+      <>
+        <Segmented aria-label="1" options={opts} />
+        <Segmented aria-label="2" options={opts} />
+      </>,
+    );
+    const r = screen.getAllByRole('radio') as HTMLInputElement[];
+    expect(r[0]!.name).not.toBe(r[2]!.name);
+  });
+
+  it('D4 TextField: aria-describedby do consumidor nao apaga erro/hint', () => {
+    render(<TextField label="L" error="ruim" aria-describedby="externo" />);
+    expect(screen.getByLabelText('L')).toHaveAccessibleDescription(/ruim/);
+  });
+
+  it('TextField: hint + erro + invalid', () => {
+    render(<TextField label="L" hint="h" error="e" />);
+    const i = screen.getByLabelText('L');
+    expect(i).toHaveAttribute('aria-invalid', 'true');
+    expect(i).toHaveAccessibleDescription('h e');
+  });
+
+  it('Input revealable alterna e sem revealable nao mostra botao', async () => {
+    const user = userEvent.setup();
+    render(<Input aria-label="s" type="password" revealable defaultValue="ação" />);
+    const i = screen.getByLabelText('s');
+    expect(i).toHaveAttribute('type', 'password');
+    await user.click(screen.getByRole('button'));
+    expect(i).toHaveAttribute('type', 'text');
+  });
+
+  it('Input revealable com type text nao mostra botao', () => {
+    render(<Input aria-label="s" revealable />);
+    expect(screen.queryByRole('button')).toBeNull();
+  });
+
+  it('Checkbox nao controlado alterna', async () => {
+    const user = userEvent.setup();
+    render(<Checkbox label="c" defaultChecked />);
+    await user.click(screen.getByRole('checkbox'));
+    expect(screen.getByRole('checkbox')).not.toBeChecked();
+  });
+
+  it('Switch controlado -> nao controlado mantem ultimo valor', () => {
+    const { rerender } = render(<Switch label="s" checked />);
+    rerender(<Switch label="s" checked={undefined} />);
+    expect(screen.getByRole('switch')).toHaveAttribute('aria-checked', 'true');
+  });
+
+  it('Alert: role e dismiss', async () => {
+    const user = userEvent.setup();
+    const fn = vi.fn();
+    render(
+      <Alert tone="warning" onDismiss={fn}>
+        x
+      </Alert>,
+    );
+    expect(screen.getByRole('alert')).toBeInTheDocument();
+    await user.click(screen.getByLabelText('Fechar aviso'));
+    expect(fn).toHaveBeenCalled();
+  });
+
+  it('Alert titulo longo com acento', () => {
+    render(<Alert title="Atenção à validação do cadastro do aluno com nome muito comprido">Ação</Alert>);
+    expect(screen.getByText(/Atenção/)).toBeInTheDocument();
+  });
+});
+
+it('CONTRASTE pares usados', () => {
+  const pairs: Array<[string, string, string, number]> = [
+    ['Button primary texto', 'on-primary', 'primary', 4.5],
+    ['Button primary hover', 'on-primary', 'primary-hover', 4.5],
+    ['Button primary press', 'on-primary', 'primary-press', 4.5],
+    ['Button danger texto', 'on-danger', 'danger', 4.5],
+    ['Button outline texto', 'ink', 'surface', 4.5],
+    ['Button outline borda', 'faint', 'surface', 3],
+    ['Button outline hover', 'ink', 'surface-2', 4.5],
+    ['Button outline/ghost active', 'ink', 'line', 4.5],
+    ['Foco (ring accent-text) sobre surface', 'accent-text', 'surface', 3],
+    ['Badge neutral', 'muted', 'surface-2', 4.5],
+    ['Badge primary', 'accent-text', 'primary-soft', 4.5],
+    ['Badge success', 'success-text', 'success-bg', 4.5],
+    ['Badge warning', 'warning-text', 'warning-bg', 4.5],
+    ['Badge danger', 'danger-text', 'danger-bg', 4.5],
+    ['Badge info', 'info-text', 'info-bg', 4.5],
+    ['Input texto', 'ink', 'surface', 4.5],
+    ['Input placeholder', 'faint', 'surface', 4.5],
+    ['Input borda', 'faint', 'surface', 3],
+    ['Input borda invalid', 'danger', 'surface', 3],
+    ['TextField erro', 'danger-text', 'surface', 4.5],
+    ['TextField hint', 'muted', 'surface', 4.5],
+    ['TextField asterisco', 'accent-text', 'surface', 4.5],
+    ['Segmented inativo', 'muted', 'surface-2', 4.5],
+    ['Segmented ativo', 'on-primary', 'primary', 4.5],
+    ['Segmented ativo vs trilho (nao texto)', 'primary', 'surface-2', 3],
+    ['Switch ligado vs surface', 'primary', 'surface', 3],
+    ['Switch desligado vs surface', 'faint', 'surface', 3],
+    ['Dialog texto', 'ink', 'surface', 4.5],
+    ['Dialog descricao/fechar', 'muted', 'surface', 4.5],
+    ['Card texto', 'ink', 'surface', 4.5],
+  ];
+  const rows: string[] = [];
+  const fails: string[] = [];
+  for (const theme of ['light', 'dark'] as const) {
+    const c = tokens.color[theme] as Record<string, string>;
+    for (const [n, fg, bg, min] of pairs) {
+      const r = contrastRatio(c[fg]!, c[bg]!);
+      const line = `${theme.padEnd(5)} | ${n.padEnd(40)} | ${fg} ${c[fg]} / ${bg} ${c[bg]} | min ${min} | medido ${r.toFixed(2)} | ${r >= min ? 'OK' : 'FALHA'}`;
+      rows.push(line);
+      if (r < min) fails.push(line);
+    }
+    for (const tr of ['primary', 'faint']) {
+      const r = contrastRatio('#ffffff', c[tr]!);
+      const line = `${theme.padEnd(5)} | Switch polegar branco sobre ${tr.padEnd(12)} | #ffffff / ${c[tr]} | min 3 | medido ${r.toFixed(2)} | ${r >= 3 ? 'OK' : 'FALHA'}`;
+      rows.push(line);
+      if (r < 3) fails.push(line);
+    }
+  }
+  console.log('QA-CONTRASTE\n' + rows.join('\n'));
+  expect(fails).toEqual([]);
+});

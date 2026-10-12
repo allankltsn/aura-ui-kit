@@ -1,0 +1,40 @@
+A11Y (axe) - LOTE 1, reverificado no HEAD a33dd0c
+=====================================================
+Escopo: este lote NAO tem interface navegavel (showcase/App.tsx e apenas um <h1>). Sem capturas de tela nem teclado; nada fabricado.
+Todas as verificacoes sao vitest-axe (axe-core) sobre DOM jsdom.
+LIMITACAO: jsdom nao calcula cores renderizadas, entao a regra de contraste do axe nao roda; contraste esta em contraste.txt.
+
+Contagem de violacoes medida nesta execucao (esperado 0). Teste descartavel: qa-axe.test.tsx.txt (removido de src/ depois).
+
+Item                                   Violacoes
+Icon sem title (loop 83 icones)                0
+Icon com title (loop 83 icones)                0
+Logo on-light                                  0
+Logo on-dark                                   0
+Logo on-red                                    0
+GoogleIcon                                     0
+AppleIcon                                      0
+
+Saida bruta:
+QA| icones => {"total":83,"violacoesSemTitle":0,"violacoesComTitle":0}
+QA| Logo on-light axe => 0
+QA| Logo on-dark axe => 0
+QA| Logo on-red axe => 0
+QA| GoogleIcon axe => 0
+QA| AppleIcon axe => 0
+      Tests  1 passed (1)
+
+Testes de axe do repo (vitest verbose, src/icons e src/components/Logo):
+ ✓ src/components/Logo/Logo.test.tsx > Logo > tem nome acessível único, sem ler as partes do wordmark 344ms
+ ✓ src/components/Logo/Logo.test.tsx > Logo > só o hífen é vermelho sobre fundo claro
+ ✓ src/components/Logo/Logo.test.tsx > Logo > sobre vermelho o wordmark inteiro fica branco
+ ✓ src/components/Logo/Logo.test.tsx > Logo > aplica o tamanho em px e não tem violações de acessibilidade
+ ✓ src/icons/Icon.test.tsx > Icon > é decorativo por padrão
+ ✓ src/icons/Icon.test.tsx > Icon > com title vira imagem acessível
+ ✓ src/icons/Icon.test.tsx > Icon > usa currentColor para herdar a cor do texto
+ ✓ src/icons/Icon.test.tsx > Icon > todo ícone tem conteúdo
+ ✓ src/icons/Icon.test.tsx > Icon > rest não sobrescreve props de segurança
+ ✓ src/icons/Icon.test.tsx > Icon > mescla className e repassa data-*, id, style e onClick
+ ✓ src/icons/Icon.test.tsx > Icon > não tem violações de acessibilidade
+ Test Files  2 passed (2)
+      Tests  11 passed (11)

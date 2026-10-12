@@ -1,0 +1,228 @@
+import { render, screen } from '@testing-library/react';
+import { axe } from 'vitest-axe';
+import { readFileSync } from 'node:fs';
+import { cn } from '@/lib/cn';
+import { Icon } from '@/icons/Icon';
+import { iconPaths, type IconName } from '@/icons/icons.generated';
+import { GoogleIcon, AppleIcon } from '@/icons/SocialIcon';
+import { Logo } from '@/components/Logo/Logo';
+import tokens from '@/tokens/tokens.json';
+
+const log = (k: string, v: unknown) => console.log(`QA| ${k} => ${JSON.stringify(v)}`);
+
+describe('(a) cn', () => {
+  it('entradas variadas', () => {
+    log('null/undefined/false/0/vazio', cn(null, undefined, false, 0 as never, '', 'a'));
+    log('objeto', cn({ a: true, b: false, c: 1 }));
+    log('arrays aninhados', cn(['a', ['b', ['c', { d: true }]]], 'e'));
+    log('duplicadas', cn('p-2 p-2 flex flex'));
+    log('conflito p-2 p-4', cn('p-2', 'p-4'));
+    log('text-body text-primary', cn('text-body text-primary'));
+    log('text-caption text-ink', cn('text-caption text-ink'));
+    log('text-primary text-body (ordem inversa)', cn('text-primary text-body'));
+    log('text-body text-heading-lg', cn('text-body', 'text-heading-lg'));
+    log('text-button text-on-primary', cn('text-button text-on-primary'));
+    log('text-button text-caption', cn('text-button', 'text-caption'));
+    log('text-primary text-ink', cn('text-primary', 'text-ink'));
+    log('text-body-medium text-muted', cn('text-body-medium text-muted'));
+    log('text-label text-accent-text text-sm', cn('text-label text-accent-text text-sm'));
+    log('vazio', cn());
+    expect(cn('text-body text-primary')).toBe('text-body text-primary');
+    expect(cn('text-caption text-ink')).toBe('text-caption text-ink');
+    expect(cn('text-button text-on-primary')).toBe('text-button text-on-primary');
+    expect(cn('text-primary', 'text-ink')).toBe('text-ink');
+    expect(cn('text-body', 'text-heading-lg')).toBe('text-heading-lg');
+  });
+});
+
+describe('(b) Icon', () => {
+  it('nome inexistente forçado', () => {
+    let err: unknown = null;
+    let html = '';
+    try {
+      html = render(<Icon name={'nao-existe' as IconName} />).container.innerHTML;
+    } catch (e) {
+      err = String(e);
+    }
+    log('nome inexistente', { err, html });
+  });
+  it('size 0, negativo, fracionário, NaN', () => {
+    for (const s of [0, -5, 12.5, NaN]) {
+      const { container, unmount } = render(<Icon name="search" size={s} />);
+      const svg = container.querySelector('svg')!;
+      log(`size=${s}`, { width: svg.getAttribute('width'), height: svg.getAttribute('height') });
+      unmount();
+    }
+  });
+  it('title vazio, title normal', () => {
+    const a = render(<Icon name="search" title="" />).container.querySelector('svg')!;
+    log('title vazio', {
+      role: a.getAttribute('role'),
+      ariaHidden: a.getAttribute('aria-hidden'),
+      ariaLabel: a.getAttribute('aria-label'),
+    });
+    const b = render(<Icon name="search" title="Buscar" />).container.querySelector('svg')!;
+    log('title=Buscar', {
+      role: b.getAttribute('role'),
+      ariaHidden: b.getAttribute('aria-hidden'),
+      ariaLabel: b.getAttribute('aria-label'),
+    });
+  });
+  it('className duplicada e repasse de props', () => {
+    const onClick = vi.fn();
+    const { container } = render(
+      <Icon
+        name="search"
+        className="shrink-0 text-primary shrink-0"
+        data-foo="bar"
+        onClick={onClick}
+      />,
+    );
+    const svg = container.querySelector('svg')!;
+    log('class', svg.getAttribute('class'));
+    svg.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    log('data-foo', svg.getAttribute('data-foo'));
+    log('onClick chamado', onClick.mock.calls.length);
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
+  it('sobrescrever aria-hidden, role, innerHTML via props', () => {
+    const a = render(<Icon name="search" aria-hidden={false} />).container.querySelector('svg')!;
+    log('aria-hidden={false} sem title', a.getAttribute('aria-hidden'));
+    const b = render(<Icon name="search" title="X" aria-hidden />).container.querySelector('svg')!;
+    log('title + aria-hidden', {
+      ariaHidden: b.getAttribute('aria-hidden'),
+      role: b.getAttribute('role'),
+    });
+    const c = render(<Icon name="search" role="button" />).container.querySelector('svg')!;
+    log('role=button sem title', {
+      role: c.getAttribute('role'),
+      ariaHidden: c.getAttribute('aria-hidden'),
+    });
+    const d = render(
+      <Icon
+        name="search"
+        {...({ dangerouslySetInnerHTML: { __html: '<circle r="1"/>' } } as object)}
+      />,
+    ).container.querySelector('svg')!;
+    log('override innerHTML via rest', d.innerHTML);
+    const e = render(
+      <Icon name="search" stroke="red" strokeWidth={3} viewBox="0 0 5 5" />,
+    ).container.querySelector('svg')!;
+    log('override stroke/viewBox', {
+      stroke: e.getAttribute('stroke'),
+      sw: e.getAttribute('stroke-width'),
+      vb: e.getAttribute('viewBox'),
+    });
+  });
+});
+
+describe('(c) todos os icones', () => {
+  it('83 icones: viewBox 24, conteudo, axe', async () => {
+    const names = Object.keys(iconPaths) as IconName[];
+    const t0 = performance.now();
+    let violations = 0;
+    let badVb = 0;
+    let empty = 0;
+    let axeMs = 0;
+    for (const name of names) {
+      const { container, unmount } = render(<Icon name={name} />);
+      const svg = container.querySelector('svg')!;
+      if (svg.getAttribute('viewBox') !== '0 0 24 24') badVb++;
+      if (svg.children.length === 0) empty++;
+      const t1 = performance.now();
+      violations += (await axe(container)).violations.length;
+      axeMs += performance.now() - t1;
+      unmount();
+    }
+    let violT = 0;
+    for (const name of names) {
+      const { container, unmount } = render(<Icon name={name} title={name} />);
+      violT += (await axe(container)).violations.length;
+      unmount();
+    }
+    const ms = performance.now() - t0;
+    log('icones', {
+      total: names.length,
+      badVb,
+      empty,
+      violacoesSemTitle: violations,
+      violacoesComTitle: violT,
+      msTotal: Math.round(ms),
+      msSoAxeSemTitle: Math.round(axeMs),
+    });
+    expect(names.length).toBe(83);
+    expect(badVb).toBe(0);
+    expect(violations).toBe(0);
+    expect(violT).toBe(0);
+  }, 120000);
+});
+
+describe('(d) Logo', () => {
+  it('tamanhos', () => {
+    for (const s of [0, 20, 64, 27.5, -10, NaN]) {
+      const { container, unmount } = render(<Logo size={s} />);
+      const el = container.firstElementChild as HTMLElement;
+      log(`Logo size=${s}`, { style: el.getAttribute('style') });
+      unmount();
+    }
+  });
+  it('variantes, nome acessivel unico, hifen', async () => {
+    for (const v of ['on-light', 'on-dark', 'on-red'] as const) {
+      const { container, unmount } = render(<Logo variant={v} />);
+      const imgs = screen.getAllByRole('img', { name: 'aura-fit' });
+      const hy = container.querySelector('[data-part="hyphen"]')!;
+      const labelled = container.querySelectorAll('[aria-label]').length;
+      const ariaHiddenChildren = container.querySelectorAll('[aria-hidden="true"]').length;
+      log(`Logo ${v}`, {
+        imgsComNome: imgs.length,
+        elementosComAriaLabel: labelled,
+        filhosAriaHidden: ariaHiddenChildren,
+        hyphenClass: hy.className,
+        rootClass: (container.firstElementChild as HTMLElement).className,
+        axe: (await axe(container)).violations.length,
+      });
+      unmount();
+    }
+    const { container } = render(<Logo className="text-primary" />);
+    log('Logo className text-primary sobre on-light', (container.firstElementChild as HTMLElement).className);
+  });
+});
+
+describe('(e) sociais', () => {
+  it('aria-hidden e tamanhos', async () => {
+    for (const C of [GoogleIcon, AppleIcon]) {
+      for (const s of [undefined, 0, 24, -3]) {
+        const { container, unmount } = render(<C size={s} />);
+        const svg = container.querySelector('svg')!;
+        log(`${C.name} size=${s}`, {
+          ariaHidden: svg.getAttribute('aria-hidden'),
+          w: svg.getAttribute('width'),
+          h: svg.getAttribute('height'),
+          vb: svg.getAttribute('viewBox'),
+        });
+        unmount();
+      }
+      const { container } = render(<C />);
+      log(`${C.name} axe`, (await axe(container)).violations.length);
+    }
+  });
+});
+
+describe('(g) tokens', () => {
+  it('chaves e hex', () => {
+    const L = Object.keys(tokens.color.light);
+    const D = Object.keys(tokens.color.dark);
+    expect(D).toEqual(L);
+    const bad: string[] = [];
+    for (const t of ['light', 'dark'] as const)
+      for (const [k, v] of Object.entries(tokens.color[t]))
+        if (!/^#[0-9a-f]{6}$/i.test(v)) bad.push(`${t}.${k}=${v}`);
+    log('hex invalidos', bad);
+    log('n chaves por tema', L.length);
+    expect(bad).toEqual([]);
+  });
+  it('tokens.css tem 1 var por chave em cada tema', () => {
+    const css = readFileSync('src/tokens/tokens.css', 'utf8');
+    log('ocorrencias --color-', (css.match(/^ {2}--color-/gm) ?? []).length);
+  });
+});

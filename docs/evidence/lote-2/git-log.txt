@@ -1,0 +1,46 @@
+$ git log --oneline 5eb7d1d..HEAD
+c22d24f feat(ui): Checkbox, Radio, Switch e Segmented
+c02ffb4 feat(ui): useControllableState, Input, TextField e Dialog
+5e4c62a feat(ui): Button, Spinner, Badge, Alert e Card com token on-danger
+
+$ git diff --stat 5eb7d1d..HEAD
+ src/components/Alert/Alert.test.tsx         |  31 ++++++++
+ src/components/Alert/Alert.tsx              |  54 +++++++++++++
+ src/components/Alert/index.ts               |   1 +
+ src/components/Badge/Badge.test.tsx         |  26 ++++++
+ src/components/Badge/Badge.tsx              |  33 ++++++++
+ src/components/Badge/index.ts               |   1 +
+ src/components/Button/Button.test.tsx       |  59 ++++++++++++++
+ src/components/Button/Button.tsx            |  69 ++++++++++++++++
+ src/components/Button/index.ts              |   1 +
+ src/components/Card/Card.test.tsx           |  29 +++++++
+ src/components/Card/Card.tsx                |  31 ++++++++
+ src/components/Card/index.ts                |   1 +
+ src/components/Checkbox/Checkbox.test.tsx   |  48 +++++++++++
+ src/components/Checkbox/Checkbox.tsx        |  54 +++++++++++++
+ src/components/Checkbox/index.ts            |   1 +
+ src/components/Dialog/ConfirmDialog.tsx     |  43 ++++++++++
+ src/components/Dialog/Dialog.test.tsx       | 119 ++++++++++++++++++++++++++++
+ src/components/Dialog/Dialog.tsx            |  88 ++++++++++++++++++++
+ src/components/Dialog/index.ts              |   2 +
+ src/components/Input/Input.test.tsx         |  65 +++++++++++++++
+ src/components/Input/Input.tsx              |  46 +++++++++++
+ src/components/Input/TextField.tsx          |  49 ++++++++++++
+ src/components/Input/index.ts               |   2 +
+ src/components/Segmented/Segmented.test.tsx |  50 ++++++++++++
+ src/components/Segmented/Segmented.tsx      |  58 ++++++++++++++
+ src/components/Segmented/index.ts           |   1 +
+ src/components/Spinner/Spinner.test.tsx     |  19 +++++
+ src/components/Spinner/Spinner.tsx          |  37 +++++++++
+ src/components/Spinner/index.ts             |   1 +
+ src/components/Switch/Switch.test.tsx       |  39 +++++++++
+ src/components/Switch/Switch.tsx            |  56 +++++++++++++
+ src/components/Switch/index.ts              |   1 +
+ src/hooks/index.ts                          |   1 +
+ src/hooks/useControllableState.test.ts      |  37 +++++++++
+ src/hooks/useControllableState.ts           |  36 +++++++++
+ src/index.ts                                |  11 +++
+ src/tokens/contrast.test.ts                 |   6 ++
+ src/tokens/tokens.css                       |   2 +
+ src/tokens/tokens.json                      |   2 +
+ 39 files changed, 1210 insertions(+)

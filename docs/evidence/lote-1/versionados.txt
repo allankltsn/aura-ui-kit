@@ -1,0 +1,9 @@
+$ git ls-files | grep -Ei "mobile|\.claude|\.serena|\.codex|stackdump"
+(exit grep: 1 ; 1 = nenhuma linha)
+$ git ls-files src/__qa__
+components
+icons
+index.ts
+lib
+test
+tokens

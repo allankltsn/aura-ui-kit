@@ -1,0 +1,10 @@
+$ adulterar tokens.css (--color-primary: 177 17 27 -> 177 17 28) e rodar scripts/tokens-css.test.ts
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  scripts/tokens-css.test.ts > renderTokensCss > src/tokens/tokens.css está em dia com tokens.json
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+$ git checkout -- src/tokens/tokens.css (restaurar pelo git, agora seguro por causa do .gitattributes)
+i/lf    w/lf    attr/text eol=lf      	src/tokens/tokens.css
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+(vazio)

@@ -1,0 +1,19 @@
+$ sha256 de tokens.css e icons.generated.ts em 3 momentos (HEAD a33dd0c)
+ecd2a814ce5e065f16f61195e445d03c6bbb54ead55b8cd932a9369c4ce04132 *src/tokens/tokens.css
+2bb5932ee407d8c732ca410649d49e04993921bdca5cc9ac4cbe05b64eced8d4 *src/icons/icons.generated.ts
+$ pnpm tokens && pnpm icons (1a)
+tokens.css atualizado
+83 ícones gerados
+ecd2a814ce5e065f16f61195e445d03c6bbb54ead55b8cd932a9369c4ce04132 *src/tokens/tokens.css
+2bb5932ee407d8c732ca410649d49e04993921bdca5cc9ac4cbe05b64eced8d4 *src/icons/icons.generated.ts
+(2a)
+tokens.css atualizado
+83 ícones gerados
+ecd2a814ce5e065f16f61195e445d03c6bbb54ead55b8cd932a9369c4ce04132 *src/tokens/tokens.css
+2bb5932ee407d8c732ca410649d49e04993921bdca5cc9ac4cbe05b64eced8d4 *src/icons/icons.generated.ts
+$ git status --short -- src scripts
+(vazio)
+$ git ls-files --eol 2 PNG + git status dos PNG
+i/-text w/-text attr/text=auto        	assets/AuraFit-auth-design-kit/backgrounds/01-login.png
+i/-text w/-text attr/text=auto        	assets/AuraFit-auth-design-kit/backgrounds/03-recuperar-senha.png
+(vazio = PNG intactos)
